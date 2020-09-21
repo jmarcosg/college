@@ -20,7 +20,7 @@ $cantLoratadina = trim(fgets(STDIN));
 echo "Ingrese la cantidad de betametasona: ";
 $cantBetametasona = trim(fgets(STDIN));
 
-// Invoco a la funcion para calcular la cantidad de agua en las proporciones leidas
+// Invoco a la funcion para calcular la proporcion de agua destilada en las cantidades leidas
 $cantAguaDestilada = calcAguaDestilada($loratadina, $betametasona);
 
 // Devuelvo e imprimo en pantalla cantidad necesaria
