@@ -11,7 +11,7 @@ function calcAguaDestilada(float $loratadina, float $betametasona) {
     return $aguaDestilada;
 }
 
-// Este programa lee los valores de dos farmacos para luego elaborar la proporcion del antialergico
+// Este programa lee los valores de dos farmacos para luego elaborar la proporcion de agua destilada en el antialergico
 // float $cantLoratadina, $cantBetametasona, $cantAguaDestilada
 
 // Ingreso y lectura de valores
