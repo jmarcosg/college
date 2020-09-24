@@ -18,8 +18,8 @@ function encriptar($numero) {
 /**
  * Este modulo recibe por parametro un numero para desencriptar y lo retorna desencriptado
  * 
- * @param $numEncriptado
- * @return $desencriptado
+ * @param int $numEncriptado
+ * @return int $desencriptado
  */
 function desencriptar($numEncriptado) {
     $num1 = ((int)($numEncriptado / 1000) + 3) % 10; //PRIMER DIGITO

@@ -1,8 +1,8 @@
 <?php
 /**
  * Esta funcion calcula la superficie circular
- * @param number $radioMenor
- * @return number $resultado
+ * @param float $radioMenor
+ * @return float $resultado
  */
 function calcularSuperficieCircular (float $radioMenor) {
     $resultado = M_PI * ($radioMenor * $radioMenor);
@@ -11,9 +11,9 @@ function calcularSuperficieCircular (float $radioMenor) {
 
 /**
  * Esta funcion calcula la superficie de la corona circular
- * @param number $radioMenor
- * @param number $radioMenor
- * @return number $resultado
+ * @param float $radioMenor
+ * @param float $radioMenor
+ * @return float $resultado
  */
 function calcularSuperficieCoronaCircular (float $radioMenor, float $radioMayor) {
     $resultado = M_PI * (($radioMayor * $radioMayor) - ($radioMenor * $radioMenor));

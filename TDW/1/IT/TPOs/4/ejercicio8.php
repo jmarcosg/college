@@ -2,9 +2,9 @@
 /**
  * Esta funcion calcula la proporcion de agua destilada en loratadina y betametasona
  * La proporcion es 10% en loratadina + 15%en betametasona
- * @param number $loratadina;
- * @param number $betametasona;
- * @return number $aguaDestilada;
+ * @param float $loratadina;
+ * @param float $betametasona;
+ * @return float $aguaDestilada;
  */
 function calcAguaDestilada(float $loratadina, float $betametasona) {
     $aguaDestilada = ($loratadina * 0.1 + $betametasona * 0.15);
