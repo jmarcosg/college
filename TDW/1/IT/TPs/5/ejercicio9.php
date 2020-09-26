@@ -43,6 +43,6 @@ $kg = trim(fgets(STDIN));
 // Invoco la funcion para calcular el IMC de la persona ingresada
 $imc = calcularIMC($estatura, $kg);
 
-// Dependiendo del resultado del IMC va a ser la clasificacion de la persona segun la OMS
+// Dependiendo del resultado del IMC va a ser la clasificacion de la persona
 clasificarIMC($imc);
 ?>
