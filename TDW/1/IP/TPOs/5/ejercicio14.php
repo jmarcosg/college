@@ -93,7 +93,7 @@ function aSegundos ($hora, $min, $seg, $tipoH) {
  * @param int $segs2
  */
 function difHoras($segs1, $segs2) {
-    // int $horas, $minutos, $segundos, $resto
+    // int $horas, $minutos, $segundos, $resto, $diferencia
     // float $cociente
     // Verifico cual de las dos horas en segundos es mayor para asi poder calcular la diferencia entre ambas
     if ($segs1 > $segs2) {
