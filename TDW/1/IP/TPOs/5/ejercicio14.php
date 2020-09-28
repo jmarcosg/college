@@ -180,12 +180,13 @@ if ($valoresCorrectos1 == true && $valoresCorrectos2 == true) {
     // Invoco a la funcion para verficar cual de las dos cantidades de segundos es menor
     $hora1Menor = esMenor($cantS1, $cantS2);
 
-    // Verifico cual de las dos horas es mayor segun la cantidad de segundos
+    // Muestro cual hora es mayor segun el resultado anterior
     if ($hora1Menor) {
         echo "Las horas ordenadas de mayor a menor son: "."\n";
         formatoHora($cantS2);
         formatoHora($cantS1);
     } else {
+        echo "Las horas ordenadas de mayor a menor son: "."\n";
         formatoHora($cantS1);
         formatoHora($cantS2);
     }
