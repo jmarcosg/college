@@ -100,7 +100,7 @@ function difHoras($segs1, $segs2) {
     } else {
         $diferencia = $segs2 - $segs1;
     }
-    // Calculo y convierto los segundos totales a formato hh:mm:ss
+    // Calculo y convierto la diferencia de segundos a formato hh:mm:ss
     $cociente = (int)$diferencia / 60;
     $resto = $diferencia % 60; // Segundos
     $segundos = $resto;
