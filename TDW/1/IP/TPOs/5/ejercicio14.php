@@ -141,8 +141,8 @@ function formatoHora ($segsTotales) {
 }
 
 /**
- * Este programa lee dos horas, minutos, segundos y tipo de horario diferentes
- * Luego las ordena de mayor a menor, muestra la cantidad de segundo que representan y la diferencia horaria
+ * Este programa lee dos horas, minutos, segundos y tipos de horarios diferentes
+ * Luego las ordena de mayor a menor, muestra la cantidad de segundos que representan y la diferencia horaria
  * int $hora1, $hora2, $min1, $min2, $seg1, $seg2, $cantS1, $cantS2, $difHoraria
  * string $tipoH1, $tipoH2
  * boolean $valoresCorrectos1, $valoresCorrectos2, $hora1Menor
