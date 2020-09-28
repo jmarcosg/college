@@ -49,6 +49,7 @@ function esMenor ($segs1, $segs2) {
  * @return int $segTotales
  */
 function aSegundos ($hora, $min, $seg, $tipoH) {
+    // int $segTotales
     // Verifico el tipo de horario para ver si es necesario convertir la hora
     if ($tipoH == "PM") {
         if ($hora == 1) {
