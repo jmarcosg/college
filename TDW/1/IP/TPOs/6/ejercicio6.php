@@ -34,10 +34,10 @@ $cantidadSueldos++;
      } while ($otroSueldo == "si");
      // Calculo el promedio de sueldos y lo muestro por pantalla
     $promedioSueldos = $sumaSueldos / $cantidadSueldos;
-    echo "El promedio de sueldos para esta empresa es: $".$promedioSueldos;
+    echo "El promedio de sueldos en esta empresa es: $".$promedioSueldos;
  } else {
     $promedioSueldos = $sumaSueldos / $cantidadSueldos;
-    echo "El promedio de sueldos para esta empresa es: $".$promedioSueldos;
+    echo "El promedio de sueldo en esta empresa es: $".$promedioSueldos;
  }
 
 ?>
