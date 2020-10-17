@@ -6,7 +6,7 @@
  * @return float $promedio
  */
 function calcularPromedioMultiplos ($cantMultiplos, $cantNumerosIngresados) {
-    $promedio = ($cantidadMultiplos * 100) / $cantidadNumerosIngresados;
+    $promedio = ($cantMultiplos * 100) / $cantNumerosIngresados;
     return $promedio;
 }
 
@@ -59,11 +59,6 @@ $multiplo = 0;
         }
      }
 } while ($multiplo <> -1);
-
-// test para verificar la cantidad que tengo de cada cosa
-echo "cant num ing: ".$cantidadNumerosIngresados;
-echo "cant mult: ".$cantidadMultiplos;
-
 // Invoco a la funcion para calcular el promedio de multiplos ingresados y almaceno su valor
 $promedioMultiplos = calcularPromedioMultiplos($cantidadMultiplos, $cantidadNumerosIngresados);
 
