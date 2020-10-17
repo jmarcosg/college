@@ -35,5 +35,5 @@ function calcularSumatoria ($num) {
 $resultado = calcularSumatoria($numero);
 
 // Muestro por pantalla el resultado
-echo "El resultado de la sumatoria para el numero ingresado es: ".$resultado;
+echo "El resultado de la sumatoria para ".$numero." es: ".$resultado;
 ?>
