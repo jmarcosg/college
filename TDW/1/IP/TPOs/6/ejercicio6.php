@@ -39,5 +39,4 @@ $cantidadSueldos++;
     $promedioSueldos = $sumaSueldos / $cantidadSueldos;
     echo "El promedio de sueldo en esta empresa es: $".$promedioSueldos;
  }
-
 ?>
