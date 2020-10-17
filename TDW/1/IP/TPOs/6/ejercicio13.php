@@ -23,7 +23,8 @@ function calcularSumatoria ($num) {
 /**
  * Programa principal
  *  Lee un numero N para luego invocar a la funcion que calcula la sumatoria
- * int $numero, $resultado
+ * int $numero
+ * float $resultado
  */
 
  // Ingreso y lectura de valores
