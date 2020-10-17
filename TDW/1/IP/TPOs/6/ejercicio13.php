@@ -7,7 +7,7 @@
  * @return float $res
  */
 function calcularSumatoria ($num) {
-    // int $n, $m, $j
+    // int $n, $j
     // Inicializo a $n en 2 como dicta la formula  
     $n = 2;
 
