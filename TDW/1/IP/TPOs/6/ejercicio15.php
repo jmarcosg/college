@@ -11,16 +11,16 @@ function calcularPromedioMultiplos ($cantMultiplos, $cantNumerosIngresados) {
 }
 
 /**
- * Esta funcion verifica si un numero es multiplo de otro que recibe por parametro
+ * Esta funcion verifica si un numero es multiplo de otro
  * @param int $num
  * @param int $multip
  * @return boolean $esMultiploDe
  */
-function verificarMultiplo ($num, $multip) {
+function verificarMultiplo ($num, $multiplo) {
     // int $calcularMultiplo
 
-    // Calculo si $num es multiplo de $multip
-    $calcularMultiplo = $multip % $num;
+    // Calculo si $num es multiplo de $multiplo
+    $calcularMultiplo = $multiplo % $num;
 
     // Si $calcularMultiplo == 0 es multiplo, por lo tanto true
     if ($calcularMultiplo == 0) {
@@ -34,31 +34,32 @@ function verificarMultiplo ($num, $multip) {
 /**
  * Programa principal
  * Este programa lee un numero principal y luego una serie de numeros aleatorios
- * Luego muestra por pantalla la cantidad de multiplos que hubieron en la serie de numeros con respecto al numero principal
- * int $numero, $multiplo, $cantidadMultiplos, $cantidadNumerosIngresados, $promedioMultiplos
+ * Luego muestra por pantalla el porcentaje de multiplos que hubieron en la serie de numeros con respecto al numero principal
+ * int $numero, $posibleMultiplo, $cantidadMultiplos, $cantidadNumerosIngresados 
+ * float $promedioMultiplos
  * boolean $esMultiplo
  */
 // Inicializo variables
 $cantidadMultiplos = 0;
-$multiplo = 0;
+$posibleMultiplo = 0;
 
  // Ingreso y lectura de valores
  echo "Ingrese un numero: ";
- $numero = trim(fgets(STDIN));
+ $numero = (int)trim(fgets(STDIN));
 
  do {
      echo "Ingrese un posible multiplo: ";
-     $multiplo = trim(fgets(STDIN));
-     if ($multiplo <> -1) {
+     $posibleMultiplo = (int)trim(fgets(STDIN));
+     if ($posibleMultiplo <> -1) {
         // Aumento en 1 la cantidad de numeros ingresados
         $cantidadNumerosIngresados++;
          // Invoco a la funcion para verificar si el numero ingresado es multiplo y luego si lo es aumento su valor en 1
-        $esMultiplo = verificarMultiplo($numero, $multiplo);
+        $esMultiplo = verificarMultiplo($numero, $posibleMultiplo);
         if ($esMultiplo) {
            $cantidadMultiplos++;
         }
      }
-} while ($multiplo <> -1);
+} while ($posibleMultiplo <> -1);
 // Invoco a la funcion para calcular el promedio de multiplos ingresados y almaceno su valor
 $promedioMultiplos = calcularPromedioMultiplos($cantidadMultiplos, $cantidadNumerosIngresados);
 
