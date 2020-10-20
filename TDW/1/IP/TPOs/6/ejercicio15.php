@@ -48,16 +48,16 @@ $posibleMultiplo = 0;
  $numero = (int)trim(fgets(STDIN));
 
  do {
-     echo "Ingrese un posible multiplo: ";
-     $posibleMultiplo = (int)trim(fgets(STDIN));
-     if ($posibleMultiplo <> -1) {
-        // Aumento en 1 la cantidad de numeros ingresados
-        $cantidadNumerosIngresados++;
-         // Invoco a la funcion para verificar si el numero ingresado es multiplo y luego si lo es aumento su valor en 1
+    echo "Ingrese un posible multiplo: ";
+    $posibleMultiplo = (int)trim(fgets(STDIN));
+    if ($posibleMultiplo <> -1) {
+        // Invoco a la funcion para verificar si el numero ingresado es multiplo y luego si lo es aumento el contador en 1
         $esMultiplo = verificarMultiplo($numero, $posibleMultiplo);
         if ($esMultiplo) {
            $cantidadMultiplos++;
         }
+        // Aumento en 1 la cantidad de numeros ingresados
+        $cantidadNumerosIngresados++;
      }
 } while ($posibleMultiplo <> -1);
 // Invoco a la funcion para calcular el promedio de multiplos ingresados y almaceno su valor
