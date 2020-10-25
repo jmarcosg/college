@@ -1,4 +1,4 @@
-package ejerciciosclase;
+package ejerciciosClase;
 import utiles.TecladoIn;
 
 /**

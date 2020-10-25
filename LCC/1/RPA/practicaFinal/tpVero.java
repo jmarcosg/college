@@ -11,7 +11,7 @@ public class tpVero {
         System.out.println("Ingrese el numero correspondiente a la opcion que quiera");
         System.out.println("");
         System.out.println("(0) Salir");
-        System.out.println("(1) Leer una cadena compuesta solo por letras y el espacio en blanco."");
+        System.out.println("(1) Leer una cadena compuesta solo por letras y el espacio en blanco.");
         System.out.println("(2) ");
         System.out.println("(3) ");
         System.out.println("(4) ");
@@ -19,10 +19,9 @@ public class tpVero {
         System.out.println("_____________________________________________________________");
     }
 	
-	public static void verificarPalabra (String pal) {
+	public static int verificarPalabra (String pal) {
 		int longitudPalabra = pal.length();
-		
-		
+		return longitudPalabra;
 	}
 
 	public static void main(String[] args) {

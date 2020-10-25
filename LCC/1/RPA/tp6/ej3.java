@@ -5,13 +5,13 @@
  */
 package tp6;
 
-import Utiles.TecladoIn;
+import utiles.TecladoIn;
 
 /**
  *
  * @author usuario
  */
-public class Ej3 {
+public class ej3 {
     public static void main (String [] args){
         //Este algoritmo determina si un numero es capicua o no
         

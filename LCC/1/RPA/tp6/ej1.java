@@ -5,7 +5,7 @@
  */
 package tp6;
 
-import Utiles.TecladoIn;
+import utiles.TecladoIn;
 
 /**
  *
@@ -20,7 +20,7 @@ los siguientes mensajes: “Juan es mayor que María”, “Juan tiene 2 años m
 Desarrollar un programa pida el nombre y edad de dos personas y muestre por pantalla quién es el
 mayor y por cuántos años los supera.
 */
-public class Ej1 {
+public class ej1 {
     public static void main (String[] args){
         //Este algoritmo muestra quien es el mayor y por cuantos años lo supera
         

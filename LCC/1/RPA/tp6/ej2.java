@@ -5,7 +5,7 @@
  */
 package tp6;
 
-import Utiles.TecladoIn;
+import utiles.TecladoIn;
 
 /**
  *
@@ -20,7 +20,7 @@ mostrar los siguientes mensajes: “A Juan le corresponde cobrar el bono por bue
 Desarrollar un programa pida el nombre del trabajador y la cantidad de inasistencias y muestre el
 monto a cobrar en concepto de buena asistencia
 */
-public class Ej2 {
+public class ej2 {
     public static void main (String [] args) {
         //Este algoritmo muestra la cantidad de inasistencias y muestra el monto a cobrar
         

@@ -5,7 +5,7 @@
  */
 package tp6;
 
-import Utiles.TecladoIn;
+import utiles.TecladoIn;
 
 /**
  *
