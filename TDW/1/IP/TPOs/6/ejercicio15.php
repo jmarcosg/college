@@ -42,6 +42,7 @@ function verificarMultiplo ($num, $multiplo) {
 // Inicializo variables
 $cantidadMultiplos = 0;
 $posibleMultiplo = 0;
+$cantidadNumerosIngresados = 0;
 
  // Ingreso y lectura de valores
  echo "Ingrese un numero: ";
