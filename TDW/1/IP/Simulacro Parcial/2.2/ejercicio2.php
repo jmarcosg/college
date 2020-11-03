@@ -34,6 +34,7 @@ $sumatoriaNumeros = 0;
 echo "Ingrese el numero que finalize el programa: ";
 $numero = (int) trim(fgets(STDIN));
 
+// Invoco a la funcion para el ingreso de numeros, le envio por paramentro el numero que corta la secuencia y almaceno el valor del retorno
 $sumatoriaNumeros = sumaFiltrada($numero);
 
 // Devuelvo el resultado
