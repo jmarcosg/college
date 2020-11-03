@@ -6,7 +6,7 @@
  */
 function sumaFiltrada($numeroQueCorta)
 {
-    // int $suma, $num
+    // int $num
 
     // Inicializo variables
     $sumatoria = 0;
