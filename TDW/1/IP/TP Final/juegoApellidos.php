@@ -10,15 +10,15 @@
  */
 function cargarPalabras()
 {
-    $coleccionPalabras = array();
-    $coleccionPalabras[0] = array("palabra" => "papa", "pista" => "se cultiva bajo tierra", "puntosPalabra" => 4);
-    $coleccionPalabras[1] = array("palabra" => "hepatitis", "pista" => "enfermedad que inflama el higado", "puntosPalabra" => 7);
-    $coleccionPalabras[2] = array("palabra" => "volkswagen", "pista" => "marca de vehiculo", "puntosPalabra" => 10);
-    $coleccionPalabras[3] = array("palabra" => "torre", "pista" => "estructura alta", "puntosPalabra" => 6);
-    $coleccionPalabras[4] = array("palabra" => "casa", "pista" => "lugar de residencia", "puntosPalabra" => 4);
-    $coleccionPalabras[5] = array("palabra" => "tomate", "pista" => "es una fruta", "puntosPalabra" => 6);
-    $coleccionPalabras[6] = array("palabra" => "rompecabezas", "pista" => "marca de vehiculo", "puntosPalabra" => 7);
-    $coleccionPalabras[7] = array("palabra" => "salvavidas", "pista" => "te ayuda a flotar en el agua", "puntosPalabra" => 7);
+    $coleccionPalabras = [];
+    $coleccionPalabras[0] = ["palabra" => "papa", "pista" => "se cultiva bajo tierra", "puntosPalabra" => 4];
+    $coleccionPalabras[1] = ["palabra" => "hepatitis", "pista" => "enfermedad que inflama el higado", "puntosPalabra" => 7];
+    $coleccionPalabras[2] = ["palabra" => "volkswagen", "pista" => "marca de vehiculo", "puntosPalabra" => 10];
+    $coleccionPalabras[3] = ["palabra" => "torre", "pista" => "estructura alta", "puntosPalabra" => 6];
+    $coleccionPalabras[4] = ["palabra" => "casa", "pista" => "lugar de residencia", "puntosPalabra" => 4];
+    $coleccionPalabras[5] = ["palabra" => "tomate", "pista" => "es una fruta", "puntosPalabra" => 6];
+    $coleccionPalabras[6] = ["palabra" => "rompecabezas", "pista" => "marca de vehiculo", "puntosPalabra" => 7];
+    $coleccionPalabras[7] = ["palabra" => "salvavidas", "pista" => "te ayuda a flotar en el agua", "puntosPalabra" => 7];
 
     // TODO: agregar 3-4 palabras mas
 
@@ -31,11 +31,11 @@ function cargarPalabras()
  */
 function cargarJuegos()
 {
-    $coleccionJuegos = array();
-    $coleccionJuegos[0] = array("puntos" => 0, "indicePalabra" => 1);
-    $coleccionJuegos[1] = array("puntos" => 10, "indicePalabra" => 2);
-    $coleccionJuegos[2] = array("puntos" => 0, "indicePalabra" => 1);
-    $coleccionJuegos[3] = array("puntos" => 8, "indicePalabra" => 0);
+    $coleccionJuegos = [];
+    $coleccionJuegos[0] = ["puntos" => 0, "indicePalabra" => 1];
+    $coleccionJuegos[1] = ["puntos" => 10, "indicePalabra" => 2];
+    $coleccionJuegos[2] = ["puntos" => 0, "indicePalabra" => 1];
+    $coleccionJuegos[3] = ["puntos" => 8, "indicePalabra" => 0];
 
     /*>>> Agregar al menos 3 juegos realizados más <<<*/
 
@@ -240,7 +240,7 @@ function jugar($coleccionPalabras, $indicePalabra, $cantIntentos)
  */
 function agregarJuego($coleccionJuegos, $puntos, $indicePalabra)
 {
-    $coleccionJuegos[] = array("puntos" => $puntos, "indicePalabra" => $indicePalabra);
+    $coleccionJuegos[] = ["puntos" => $puntos, "indicePalabra" => $indicePalabra];
     return $coleccionJuegos;
 }
 
@@ -251,7 +251,7 @@ function agregarJuego($coleccionJuegos, $puntos, $indicePalabra)
  */
 function mostrarPalabra($coleccionPalabras, $indicePalabra)
 {
-    //$coleccionPalabras[0]= array("palabra"=> "papa" , "pista" => "se cultiva bajo tierra", "puntosPalabra"=>7);
+    //$coleccionPalabras[0]= ["palabra"=> "papa" , "pista" => "se cultiva bajo tierra", "puntosPalabra"=>7);
 
     /*>>> Completar el cuerpo de la función, respetando lo indicado en la documentacion <<<*/
 }
@@ -264,7 +264,7 @@ function mostrarPalabra($coleccionPalabras, $indicePalabra)
  */
 function mostrarJuego($coleccionJuegos, $coleccionPalabras, $indiceJuego)
 {
-    //array("puntos"=> 8, "indicePalabra" => 1)
+    //["puntos"=> 8, "indicePalabra" => 1)
     echo "\n\n";
     echo "<-<-< Juego " . $indiceJuego . " >->->\n";
     echo "  Puntos ganados: " . $coleccionJuegos[$indiceJuego]["puntos"] . "\n";
