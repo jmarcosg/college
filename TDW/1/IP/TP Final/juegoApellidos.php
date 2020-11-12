@@ -40,8 +40,6 @@ function cargarJuegos()
     $coleccionJuegos[5] = ["puntos" => 10, "indicePalabra" => 4];
     $coleccionJuegos[6] = ["puntos" => 10, "indicePalabra" => 7];
 
-    /*>>> Agregar al menos 3 juegos realizados más <<<*/
-
     return $coleccionJuegos;
 }
 
@@ -65,7 +63,14 @@ recuerde que los string pueden ser recorridos como los arreglos.  <<<*/
 function seleccionarOpcion()
 {
     echo "--------------------------------------------------------------\n";
-    echo "\n ( 1 ) Jugar con una palabra aleatoria";
+    echo "1) Jugar con una palabra aleatoria. \n";
+    echo "2) Jugar con una palabra elegida. \n";
+    echo "3) Agregar una palabra la listado. \n";
+    echo "4) Mostrar la información completa de un número de juego. \n";
+    echo "5) Mostrar la información completa del primer juego con más puntaje. \n";
+    echo "6) Mostrar la información completa del primer juego que supere un puntaje. \n";
+    echo "7) Mostrar la lista de palabras ordenada por orden alfabético. \n";
+    echo "0) Jugar con una palabra aleatoria. \n";
 
     /*>>> Completar el menu <<<*/
 
