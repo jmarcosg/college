@@ -20,7 +20,7 @@ function cargarPalabras()
     $coleccionPalabras[6] = ["palabra" => "rompecabezas", "pista" => "marca de vehiculo", "puntosPalabra" => 7];
     $coleccionPalabras[7] = ["palabra" => "salvavidas", "pista" => "te ayuda a flotar en el agua", "puntosPalabra" => 7];
 
-    // TODO: agregar 3-4 palabras mas
+    // TODO: se podria agregar 3-4 palabras mas
 
     return $coleccionPalabras;
 }
@@ -46,13 +46,15 @@ function cargarJuegos()
 /**
  * a partir de la palabra genera un arreglo para determinar si sus letras fueron o no descubiertas
  * @param string $palabra
- * @return array
+ * @return array $letras
  */
 function dividirPalabraEnLetras($palabra)
 {
 
     /*>>> Completar para generar la estructura de datos b) indicada en el enunciado.
-recuerde que los string pueden ser recorridos como los arreglos.  <<<*/
+    recuerde que los string pueden ser recorridos como los arreglos.  <<<*/
+
+    // TODO: Se tiene guardar la longitud de la palabra en una variable para asi armar un arreglo con cada letra de la palabra en la posicion correspondiente del mismo
 
 }
 
@@ -320,4 +322,4 @@ do {
             echo "Opcion incorrecta. Verifique por favor. \n";
             break;
     }
-} while ($opcion != 8);
+} while ($opcion != 0);
