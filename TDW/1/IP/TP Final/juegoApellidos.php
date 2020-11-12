@@ -36,6 +36,9 @@ function cargarJuegos()
     $coleccionJuegos[1] = ["puntos" => 10, "indicePalabra" => 2];
     $coleccionJuegos[2] = ["puntos" => 0, "indicePalabra" => 1];
     $coleccionJuegos[3] = ["puntos" => 8, "indicePalabra" => 0];
+    $coleccionJuegos[4] = ["puntos" => 8, "indicePalabra" => 6];
+    $coleccionJuegos[5] = ["puntos" => 10, "indicePalabra" => 4];
+    $coleccionJuegos[6] = ["puntos" => 10, "indicePalabra" => 7];
 
     /*>>> Agregar al menos 3 juegos realizados más <<<*/
 
