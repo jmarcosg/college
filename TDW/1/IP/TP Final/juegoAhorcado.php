@@ -17,7 +17,7 @@ function cargarPalabras()
     $coleccionPalabras[3] = ["palabra" => "torre", "pista" => "estructura alta", "puntosPalabra" => 6];
     $coleccionPalabras[4] = ["palabra" => "casa", "pista" => "lugar de residencia", "puntosPalabra" => 4];
     $coleccionPalabras[5] = ["palabra" => "tomate", "pista" => "es una fruta", "puntosPalabra" => 6];
-    $coleccionPalabras[6] = ["palabra" => "rompecabezas", "pista" => "marca de vehiculo", "puntosPalabra" => 7];
+    $coleccionPalabras[6] = ["palabra" => "rompecabezas", "pista" => "es un juego de mesa", "puntosPalabra" => 7];
     $coleccionPalabras[7] = ["palabra" => "salvavidas", "pista" => "te ayuda a flotar en el agua", "puntosPalabra" => 7];
 
     // TODO: se podria agregar 3-4 palabras mas
@@ -299,6 +299,7 @@ do {
     $opcion = seleccionarOpcion();
     switch ($opcion) {
         case 0:
+
             break;
         case 1: //Jugar con una palabra aleatoria
 
