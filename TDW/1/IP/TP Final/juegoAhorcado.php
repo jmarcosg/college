@@ -5,7 +5,7 @@
  ******************************************/
 
 /**
- * genera un arreglo de palabras para jugar
+ * Esta funcion genera un arreglo asociativo de palabras para jugar
  * @return array
  */
 function cargarPalabras()
@@ -26,7 +26,7 @@ function cargarPalabras()
 }
 
 /**
- * completar comentario
+ * Esta funcion almacena distintas partidas que se jugaron junto con el puntaje y la palabra con la que se jugó
  *
  */
 function cargarJuegos()
@@ -44,7 +44,8 @@ function cargarJuegos()
 }
 
 /**
- * a partir de la palabra genera un arreglo para determinar si sus letras fueron o no descubiertas
+ * Esta funcion a partir de la palabra recibida por parametro genera un arreglo asociativo para determinar si sus letras fueron o no descubiertas
+ * Además, se recorre a la palabra y se separa en letras dentro de un nuevo arreglo
  * @param string $palabra
  * @return array $letras
  */
@@ -59,7 +60,7 @@ function dividirPalabraEnLetras($palabra)
 }
 
 /**
- * muestra y obtiene una opcion de menú ***válida***
+ * Esta funcion muestra por pantalla el menu de usuario y obtiene una opcion de menú ***válida***
  * @return int $opcion
  */
 function seleccionarOpcion()
@@ -297,6 +298,8 @@ define("CANT_INTENTOS", 6); //Constante en php para cantidad de intentos que ten
 do {
     $opcion = seleccionarOpcion();
     switch ($opcion) {
+        case 0:
+            break;
         case 1: //Jugar con una palabra aleatoria
 
             break;
