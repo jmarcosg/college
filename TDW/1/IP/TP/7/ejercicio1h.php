@@ -122,7 +122,7 @@ function minTemperatura($arreglo, $cantElementos)
         }
 
         // Si la temperatura minima es menor a la maxima y ademas el elemento en posicion i es menor a la maxima es la nueva temperatura minima
-        if ($tempMinima < $tempMaxima && $arreglo[$i] < $tempMaxima) {
+        if ($arreglo[$i] < $tempMaxima) {
             $tempMinima = $arreglo[$i];
         }
     }
@@ -313,7 +313,7 @@ do {
 
                     // Muestro el arreglo asociativo, $key es la clave de este nuevo arreglo y $value el valor que contiene la clave
                     foreach ($arregloAsociativoTemperaturas as $key => $value) {
-                        echo $key . " es " . $value . "°C\n";
+                        echo $key . ": " . $value . "°C\n";
                     }
                     echo "\n";
                     break;
