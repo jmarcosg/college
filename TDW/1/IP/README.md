@@ -4,7 +4,7 @@
 * ### Jefe de Práctica: Karina Rozas
 * #### Ayudantes de Cátedra: David Torchinsky, Guillermo Agustin Chiarotto 
 
-Algoritmos realizados durante la cursada virtual debido a la pandemia mundial COVID-19 de 2020. 
+Algoritmos realizados durante la cursada virtual 2020 debido a la pandemia mundial COVID-19. 
 
 
 IDE utilizado: Visual Studio Code.
