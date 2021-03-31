@@ -35,9 +35,9 @@ function menu()
  */
 
 // Inicializacion de variables
-$horas = 23;
-$minutos = 59;
-$segundos = 56;
+$horas = 00;
+$minutos = 00;
+$segundos = 00;
 
 $cronometro = new Reloj($horas, $minutos, $segundos);
 echo $cronometro . "\n";
