@@ -81,11 +81,12 @@ do {
             $teatro->setNombreTeatro($nombreTeatro);
             $teatro->setDireccionTeatro($direccionTeatro);
             break;
-        case 5:
+        case 5: // Modificar datos de una funcion (nombre y precio)
             echo "Ingrese el nombre de la funcion a modificar: ";
             $nombreFuncion = trim(fgets(STDIN));
             $numeroFuncion = $teatro->buscarFuncion($nombreFuncion);
 
+            // Si el numero de la funcion buscada esta dentro del margen, se prodece a modificar los valores. De lo contrario, error
             if ($numeroFuncion >= 0 && $numeroFuncion <= 3) {
                 echo "Ingrese el nuevo nombre de la funcion: ";
                 $nombreFuncion = trim(fgets(STDIN));
@@ -95,7 +96,6 @@ do {
             } else {
                 echo "No se ha encontrado una funcion con ese nombre, verifique por favor. \n";
             }
-
             break;
         default:
             echo "Opcion incorrecta, verifique por favor! \n";
