@@ -1,75 +1,75 @@
 <?php
 class Teatro
 {
+    // Atributos
     private $funciones;
     private $nombre;
     private $direccion;
 
-    public function __construct($nom, $dir)
+    // Constructor
+    public function __construct($nombre, $direccion, $funciones)
     {
-        $this->nombre = $nom;
-        $this->direccion = $dir;
-        $this->funciones = [
-            0 => ["nombre" => "Romeo y Julieta", "precio" => 120],
-            1 => ["nombre" => "El Lago de los Cisnes", "precio" => 150],
-            2 => ["nombre" => "Hamlet", "precio" => 132],
-            3 => ["nombre" => "Edipo Rey", "precio" => 145],
-        ];
+        $this->nombreTeatro = $nombre;
+        $this->direccionTeatro = $direccion;
+        $this->funcionesTeatro = $funciones;
     }
 
-    public function getNombre()
+    // Observadoras
+    public function getNombreTeatro()
     {
-        return $this->nombre;
+        return $this->nombreTeatro;
     }
 
-    public function getDireccion()
+    public function getDireccionTeatro()
     {
-        return $this->direccion;
+        return $this->direccionTeatro;
     }
 
     public function getFunciones()
     {
-        return $this->funciones;
+        return $this->funcionesTeatro;
     }
 
-    public function setNombre($nom)
+    public function setNombreTeatro($nombre)
     {
-        $this->nombre = $nom;
+        $this->nombreTeatro = $nombre;
     }
 
-    public function setDireccion($dir)
+    public function setDireccionTeatro($direccion)
     {
-        $this->direccion = $dir;
+        $this->direccionTeatro = $direccion;
     }
 
-    public function existeFuncion($funcionBuscada)
+    // Metodos
+    public function buscarFuncion($funcionBuscada)
     {
-        $pos = -1;
+        /**
+         * Declaracion de variables
+         * int $indiceFuncion, $i
+         */
+
+        // Inicializacion de variables
+        $indiceFuncion = -1;
         $i = 0;
-        while ($i < count($this->funciones) && $pos == -1) {
-            if ($this->funciones[$i]["nombre"] == $funcionBuscada) {
-                $pos = $i;
+
+        while ($i < count($this->funcionesTeatro) && $indiceFuncion == -1) {
+            if ($this->funcionesTeatro[$i]["nombre"] == $funcionBuscada) {
+                $indiceFuncion = $i;
             } else {
                 $i++;
             }
         }
-        return $pos;
+        return $indiceFuncion;
     }
 
-    public function cambiarFuncion($pos, $nuevoNombre, $nuevoPrecio)
+    public function modificarFuncion($indiceFuncion, $nuevoNombreFuncion, $nuevoPrecioFuncion)
     {
-        $this->funciones[$pos]["nombre"] = $nuevoNombre;
-        $this->funciones[$pos]["precio"] = $nuevoPrecio;
+        $this->funcionesTeatro[$indiceFuncion]["nombre"] = $nuevoNombreFuncion;
+        $this->funcionesTeatro[$indiceFuncion]["precio"] = $nuevoPrecioFuncion;
     }
 
     public function __toString()
     {
-        return "Teatro: " . $this->nombre . "\n" . "Direccion: " . $this->direccion . "\n";
+        return "Teatro: " . $this->nombreTeatro . "\n" . "Direccion: " . $this->direccionTeatro . "\n";
     }
 }
-
-//Test Teatro
-$teatro = new Teatro("Village", "Yrigoyen 300");
-echo $teatro;
-
-print_r($teatro->getFunciones());
