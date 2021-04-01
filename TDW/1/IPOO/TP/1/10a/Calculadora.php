@@ -4,6 +4,7 @@ class Calculadora
     // Realizacion de una operacion en un calculadora
     // $num1 y $num2 son los numeros de la operacion
 
+    // Atributos
     private $num1;
     private $num2;
 
@@ -15,6 +16,7 @@ class Calculadora
         $this->num2 = $num2;
     }
 
+    // Observadoras
     public function getNum1()
     {
         return $this->num1;
@@ -25,6 +27,7 @@ class Calculadora
         return $this->num2;
     }
 
+    // Metodos
     /**
      * Realiza la suma entre dos variables
      * @param float $num1
