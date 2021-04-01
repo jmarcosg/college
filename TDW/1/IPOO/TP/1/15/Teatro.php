@@ -68,7 +68,7 @@ class Teatro
     }
 
     /**
-     * Modifica y reemplaza valores de un funcion por unos nuevos
+     * Modifica y reemplaza valores de un funcion existente por unos nuevos
      */
     public function modificarFuncion($indiceFuncion, $nuevoNombreFuncion, $nuevoPrecioFuncion)
     {

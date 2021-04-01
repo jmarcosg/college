@@ -81,7 +81,7 @@ do {
             $teatro->setNombreTeatro($nombreTeatro);
             $teatro->setDireccionTeatro($direccionTeatro);
             break;
-        case 5: // Modificar datos de una funcion (nombre y precio)
+        case 5: // Modificar datos de una funcion del teatro (nombre y precio)
             echo "Ingrese el nombre de la funcion a modificar: ";
             $nombreFuncion = trim(fgets(STDIN));
             $numeroFuncion = $teatro->buscarFuncion($nombreFuncion);
