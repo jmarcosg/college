@@ -3,7 +3,7 @@ class CuentaBancaria
 {
     //Atributos
     private $nroCuenta;
-    private $datosPersona;
+    private $datosTitular;
     private $saldoCuenta;
     private $interesAnual;
 
