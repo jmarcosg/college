@@ -8,6 +8,12 @@ class Producto
      * string $descripcionProdcuto
      * boolean $productoDisponible
      */
+    private $codigoProducto;
+    private $costoProducto;
+    private $anioFabricacion;
+    private $descripcionProdcuto;
+    private $incrementoAnual;
+    private $productoDisponible;
 
     // Constructor
     public function __construct($codigoProducto, $costoProducto, $anioFabricacion, $descripcionProdcuto, $incrementoAnual, $productoDisponible)
@@ -46,7 +52,7 @@ class Producto
         return $this->incremento;
     }
 
-    public function getProductoDiscponible()
+    public function getProductoDisponible()
     {
         return $this->disponible;
     }
@@ -83,5 +89,38 @@ class Producto
     }
 
     // Metodos
+    /**
+     * Calcula el valor por el cual puede ser vendido el producto.
+     * Si el producto no se encuentra disponible para la venta retorna -1
+     * Si el producto esta disponible para la venta, devuelve el valor
+     */
+    public function darPrecioVenta()
+    {
+        /**
+         * Declaracion de variables
+         * float $valorFinalProducto, $costo, $incremento
+         * int $anio
+         */
 
+        if ($this->getProductoDisponible()) {
+            $costo = $this->getCostoProducto();
+            $anio = date('Y') - $this->getAnioFabricacion();
+            $incremento = $this->getIncrementoAnual();
+            $valorFinalProducto = $costo + ($costo * $anio * ($incremento / 100));
+        } else {
+            $valorFinalProducto = -1;
+        }
+
+        return $valorFinalProducto;
+    }
+
+    public function __toString()
+    {
+        return "Codigo: " . $this->getCodigoProducto() . "\n" .
+        "Costo: $" . $this->getCostoProducto() . "\n";
+        "Año de fabricacion: " . $this->getAnioFabricacion() . "\n" .
+        "Descripcion: " . $this->getDescripcionProducto() . "\n" .
+        "Incremento anual: " . $this->getIncrementoAnual() . "$\n" .
+        "Activo: " . $this->getProductoDisponible();
+    }
 }

@@ -77,6 +77,8 @@ class Cliente
     // Metodos
     public function __toString()
     {
-        return "Nombre: " . $this->apellido . ", " . $this->nombre . ". \n" . $this->tipoDoc . ": " . $this->nroDoc . ". \n" . "Dado de baja: " . $this->dadoDeBaja;
+        return "Nombre: " . $this->apellido . ", " . $this->nombre . ". \n" .
+        $this->tipoDoc . ": " . $this->nroDoc . ". \n" .
+        "Dado de baja: " . $this->dadoDeBaja;
     }
 }
