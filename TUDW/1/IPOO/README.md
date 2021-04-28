@@ -7,6 +7,6 @@
 Algoritmos realizados durante la cursada virtual 2021 debido a la pandemia mundial COVID-19. 
 
 
-IDE utilizado: VS Code
+IDE utilizado: Visual Studio Code.
 
-Lenguaje utilizado: PHP
+Lenguaje utilizado: PHP.
