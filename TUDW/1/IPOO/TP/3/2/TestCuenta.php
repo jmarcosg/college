@@ -1,10 +1,10 @@
 <?php
-include "Owner.php";
+include "Duenio.php";
 include 'Cuenta.php';
 include 'CuentaCorriente.php';
 include 'CuentaAhorro.php';
 
-$duenio = new Owner("Pepito", "Perez", "DNI", 12353734);
+$duenio = new Duenio("Pepito", "Perez", "DNI", 12353734);
 
 $ctaCorriente = new CuentaCorriente(5000, 0, $duenio);
 $ctaAhorro = new CuentaAhorro(5000, $duenio);
