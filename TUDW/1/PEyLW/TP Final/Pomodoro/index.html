@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Juan Marcos Gonzalez">
     <meta name="description" content="Una demostración e implementación de la técnica de estudio y productividad 'Pomodoro'">
+
     <title>Pomodoro</title>
-    <!-- icono pagina -->
+
+    <!-- icons -->
     <link rel="icon" type="image/png" href="assets/img/pomodoroIcon.png">
     <!-- stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/timer.css">
+    <!-- css animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <script src="assets/js/countdownTimer.js"></script>
 </head>
 
 <body>
     <div class="header">
         <a href="index.html" class="logo">Pomodoro</a>
+
         <div class="header-right">
             <a href="index.html" class="active">Inicio</a>
             <a href="listaTareas.html">Tareas</a>
@@ -24,9 +32,24 @@
             <a href="contacto.html">Contacto</a>
         </div>
     </div>
+
     <br>
-    <div class="timer">
+
+    <div class="clockBox">
+        <div class="clock" id="js-clock">
+            <span id="js-minutes">25</span>
+            <span class="separator">:</span>
+            <span id="js-seconds">00</span>
+        </div>
+
+        <progress id="js-progress" value="0"></progress>
+        <div class="timeProgressBar"></div>
+
+        <div class="timerButtonsBox">
+
+        </div>
     </div>
+
 </body>
 
 </html>
