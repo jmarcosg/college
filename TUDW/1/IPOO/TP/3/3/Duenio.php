@@ -1,5 +1,5 @@
 <?php
-class Owner
+class Duenio
 {
     // Atributos
     private $nombre;
