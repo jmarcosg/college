@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>Libro de visitas</title>
+</head>
+
+<body>
+    <form>
+        <label>Nombre:</label><br>
+        <input type="text" name="nombrePersona" maxlength="80" size="40">
+
+        <br><br>
+
+        <label>Email:</label><br>
+        <input type="text" name="emailPersona" maxlength="64" size="40">
+
+        <br><br>
+
+        <label>País de origen:</label><br>
+        <select name="paises" id="seleccionPais">
+            <option value="">Seleccione país</option>
+            <option value="ARG">Argentina</option>
+            <option value="BR">Brazil</option>
+            <option value="CL">Chile</option>
+            <option value="COL">Colombia</option>
+            <option value="VEN">Venezuela</option>
+            <option value="PER">Perú</option>
+            <option value="UY">Uruguay</option>
+        </select>
+
+        <br><br>
+
+        <label>Valoración del sitio</label><br>
+        <form>
+            <input type="radio">Malo<br>
+            <input type="radio">Regular<br>
+            <input type="radio" checked>Bueno<br>
+            <input type="radio">Muy bueno<br>
+            <input type="radio">Excelente<br>
+        </form>
+
+        <label>Comentarios:</label><br>
+        <input type="text" name="comentario" size="120">
+
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>
