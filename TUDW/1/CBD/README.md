@@ -8,6 +8,6 @@ Algoritmos realizados durante la cursada virtual 2021 debido a la pandemia mundi
 
 
 IDE utilizado: Visual Studio Code.
-Herramientas utilizadas: [Diagrams](https://app.diagrams.net)
+Herramientas utilizadas: [Diagrams](https://app.diagrams.net), XAMPP.
 
 Lenguaje utilizado: SQL.
