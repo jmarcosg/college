@@ -61,45 +61,52 @@ class Banco
     // Metodos
     public function __toString()
     {
-        return "Cuenta corriente: " . $this->ctaCorrienteToString() . "\n" .
-        "Caja de ahorro: " . $this->ctaAhorroToString() . "\n" .
+        return "Cuenta corriente: " . $this->mostrarColeccion($this->getColeccionCuentaCorriente()) . "\n" .
+        "Caja de ahorro: " . $this->mostrarColeccion($this->getColeccionCuentaAhorro()) . "\n" .
         "Ultimo valor agregado: " . $this->getUltimoValorCuentaAgregado() . "\n" .
-        "Cliente: " . $this->clienteToString() . "\n";
+        "Cliente: " . $this->mostrarColeccion($this->getColeccionCliente()) . "\n";
     }
 
-    public function ctaCorrienteToString()
+    public function mostrarColeccion($coleccion)
     {
         $mensaje = "";
-        $coleccion = $this->getColeccionCuentaCorriente();
+        $array = $coleccion;
+        $contador = count($array);
 
-        for ($i = 0; $i < count($coleccion); $i++) {
-            $mensaje .= $coleccion[$i] . "\n";
+        for ($i = 0; $i < $contador; $i++) {
+            $mensaje .= $array[$i] . "\n";
+            $mensaje .= "---------------\n";
         }
 
         return $mensaje;
     }
 
-    public function ctaAhorroToString()
+    public function incorporarCliente($objCliente)
     {
-        $mensaje = "";
-        $coleccion = $this->getColeccionCajaAhorro();
+        $colClientes = $this->getColeccionCliente();
+        $clienteYaExistente = verificarExistenciaCliente($colClientes, $objCliente);
 
-        for ($i = 0; $i < count($coleccion); $i++) {
-            $mensaje .= $coleccion[$i] . "\n";
+        if (!$clienteYaExistente) {
+            array_push($colClientes, $objCliente);
         }
 
-        return $mensaje;
     }
 
-    public function clienteToString()
+    public function verificarExistenciaCliente($coleccion, $objCliente)
     {
-        $mensaje = "";
-        $coleccion = $this->getColeccionCliente();
+        $clienteYaExistente = true;
 
         for ($i = 0; $i < count($coleccion); $i++) {
-            $mensaje .= $coleccion[$i] . "\n";
+            if ($objCliente != $coleccion[$i]) {
+                $clienteYaExistente = false;
+            }
         }
 
-        return $mensaje;
+        return $clienteYaExistente;
+    }
+
+    public function incorporarCuentaCorriente($numeroCliente)
+    {
+
     }
 }

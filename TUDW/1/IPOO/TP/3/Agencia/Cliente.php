@@ -1,17 +1,19 @@
 <?php
-class Persona
+class Cliente
 {
     // Atributos
     private $dniPersona;
     private $nombrePersona;
     private $apellidoPersona;
+    private $tipoDoc;
 
     // Constructor
-    public function __construct($dniPersona, $nombrePersona, $apellidoPersona)
+    public function __construct($dniPersona, $nombrePersona, $apellidoPersona, $tipoDoc)
     {
         $this->dni = $dniPersona;
         $this->nombre = $nombrePersona;
         $this->apellido = $apellidoPersona;
+        $this->tipoDoc = $tipoDoc;
     }
 
     // Observadoras
@@ -30,6 +32,11 @@ class Persona
         return $this->apellido;
     }
 
+    public function getTipoDoc()
+    {
+        return $this->tipoDoc;
+    }
+
     // Modificadoras
     public function setDni($dniPersona)
     {
@@ -46,10 +53,15 @@ class Persona
         $this->apellido = $apellidoPersona;
     }
 
+    public function setTipoDoc($tipoDoc)
+    {
+        $this->tipoDoc = $tipoDoc;
+    }
+
     // Metodos
     public function __toString()
     {
-        return "\tDNI: " . $this->getDniPersona() . "\n" .
+        return "\t" . $this->getTipoDoc() . ": " . $this->getDniPersona() . "\n" .
         "\tNombre: " . $this->getApellidoPersona() . ", " . $this->getNombrePersona() . "\n";
     }
 }
