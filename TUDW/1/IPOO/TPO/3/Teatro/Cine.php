@@ -18,7 +18,7 @@ class Cine extends Funcion
 
         $this->genero = $genero;
         $this->paisOrigen = $paisOrigen;
-        $this->porcentajeIncremento = 65;
+        $this->porcentajeIncremento = 1.65;
     }
 
     // Observadoras
@@ -60,5 +60,18 @@ class Cine extends Funcion
         "Genero: " . $this->getGenero() . "\n" .
         "País de origen: " . $this->getPaisOrigen() . "\n" .
         "Incremento: " . $this->getPorcentajeIncremento() . "% \n";
+    }
+
+    public function darCosto()
+    {
+        /**
+         * Declaracion de variables
+         * float $valorParcial, $valorFinal
+         */
+
+        $valorParcial = parent::darCosto();
+        $valorFinal = $valorParcial * $this->getPorcentajeIncremento();
+
+        return $valorFinal;
     }
 }

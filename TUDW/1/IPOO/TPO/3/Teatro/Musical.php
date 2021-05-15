@@ -19,7 +19,7 @@ class Musical extends Funcion
 
         $this->director = $director;
         $this->cantidadPersonasEnEscena = $cantidadPersonasEnEscena;
-        $this->porcentajeIncremento = 12;
+        $this->porcentajeIncremento = 1.12;
     }
 
     // Observadoras
@@ -61,5 +61,18 @@ class Musical extends Funcion
         "Director: " . $this->getDirector() . "\n" .
         "Cantidad de personas en escena: " . $this->getCantidadPersonasEnEscena() . "\n" .
         "Incremento: " . $this->getPorcentajeIncremento() . "% \n";
+    }
+
+    public function darCosto()
+    {
+        /**
+         * Declaracion de variables
+         * float $valorParcial, $valorFinal
+         */
+
+        $valorParcial = parent::darCosto();
+        $valorFinal = $valorParcial * $this->getPorcentajeIncremento();
+
+        return $valorFinal;
     }
 }

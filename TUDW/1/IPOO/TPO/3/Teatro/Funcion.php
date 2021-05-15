@@ -64,6 +64,14 @@ class Funcion
     }
 
     // Metodos
+    public function __toString()
+    {
+        return "\tNombre: " . $this->getNombre() . "\n" .
+        "\tHora Inicio: " . $this->getHorarioInicio() . "\n" .
+        "\tDuracion: " . $this->getDuracion() . " minutos" . "\n" .
+        "\tPrecio: $" . $this->getPrecio() . "\n";
+    }
+
     /**
      * Convierte una hora en formato hh:mm a un total de n minutos
      */
@@ -122,12 +130,10 @@ class Funcion
         return $indiceFuncion;
     }
 
-    public function __toString()
+    public function darCostos()
     {
-        return "\tNombre: " . $this->getNombre() . "\n" .
-        "\tHora Inicio: " . $this->getHorarioInicio() . "\n" .
-        "\tDuracion: " . $this->getDuracion() . " minutos" . "\n" .
-        "\tPrecio: $" . $this->getPrecio() . "\n";
-    }
+        $valorTotal = $this->getPrecio();
 
+        return $valor;
+    }
 }
