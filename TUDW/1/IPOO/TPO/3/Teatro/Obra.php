@@ -12,7 +12,7 @@ class Obra extends Funcion
     {
         parent::__construct($nombre, $horarioInicio, $duracion, $precio);
 
-        $this->porcentajeIncremento = 45;
+        $this->porcentajeIncremento = 1.45;
     }
 
     // Observadoras
@@ -32,5 +32,18 @@ class Obra extends Funcion
     {
         return parent::__toString() . "\n" .
         "\tIncremento: " . $this->getPorcentajeIncremento() . "% \n";
+    }
+
+    public function darCosto()
+    {
+        /**
+         * Declaracion de variables
+         * float $valorParcial, $valorFinal
+         */
+
+        $valorParcial = parent::darCosto();
+        $valorFinal = $valorParcial * $this->getPorcentajeIncremento();
+
+        return $valorFinal;
     }
 }
