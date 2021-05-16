@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="assets/css/timer.css">
     <!-- css animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <script src="assets/js/countdownTimer.js"></script>
 </head>
 
 <body>
@@ -27,7 +25,7 @@
         <div class="header-right">
             <a href="index.html" class="active">Inicio</a>
             <a href="listaTareas.html">Tareas</a>
-            <a href="puntuacion.html">Puntuacion</a>
+            <a href="puntuacion.html">Puntuación</a>
             <a href="info.html">Información</a>
             <a href="contacto.html">Contacto</a>
         </div>
@@ -35,21 +33,29 @@
 
     <br>
 
-    <div class="clockBox">
-        <div class="clock" id="js-clock">
-            <span id="js-minutes">25</span>
-            <span class="separator">:</span>
-            <span id="js-seconds">00</span>
+    <main class="app">
+        <div class="clockBox">
+            <div class="clock" id="js-clock">
+                <span id="js-minutes">25</span>
+                <span class="separator">:</span>
+                <span id="js-seconds">00</span>
+            </div>
+
+            <div class="timerButtonsBox"></div>
+
+            <div class="button-group mode-buttons" id="js-mode-buttons">
+                <button data-mode="pomodoro" class="button active mode-button" id="js-pomodoro">Pomodoro</button>
+
+                <button data-mode="shortBreak" class="button mode-button" id="js-short-break">Short break</button>
+
+                <button data-mode="longBreak" class="button mode-button" id="js-long-break">Long break</button>
+            </div>
+
+            <button class="startButton" data-action="start" id="js-btn">Iniciar</button>
         </div>
+    </main>
 
-        <progress id="js-progress" value="0"></progress>
-        <div class="timeProgressBar"></div>
-
-        <div class="timerButtonsBox">
-
-        </div>
-    </div>
-
+    <script src="assets/js/pomodoroTimer.js"></script>
 </body>
 
 </html>

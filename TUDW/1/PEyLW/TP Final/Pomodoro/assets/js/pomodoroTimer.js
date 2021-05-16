@@ -1,13 +1,24 @@
-// Establezco los tiempos de cada uno de los bloques
 const timer = {
   pomodoro: 25,
-  recreoCorto: 5,
-  recreoLargo: 15,
-  recreoLargoIntervalo: 4,
-  sesiones: 0,
+  shortBreak: 5,
+  longBreak: 15,
+  longBreakInterval: 4,
+  sessions: 0,
 };
 
 let interval;
+
+const buttonSound = new Audio('button-sound.mp3');
+const mainButton = document.getElementById('js-btn');
+mainButton.addEventListener('click', () => {
+  buttonSound.play();
+  const { action } = mainButton.dataset;
+  if (action === 'start') {
+    startTimer();
+  } else {
+    stopTimer();
+  }
+});
 
 const modeButtons = document.querySelector('#js-mode-buttons');
 modeButtons.addEventListener('click', handleMode);
@@ -34,7 +45,7 @@ function startTimer() {
   if (timer.mode === 'pomodoro') timer.sessions++;
 
   mainButton.dataset.action = 'stop';
-  mainButton.textContent = 'stop';
+  mainButton.textContent = 'parar';
   mainButton.classList.add('active');
 
   interval = setInterval(function() {
@@ -47,10 +58,10 @@ function startTimer() {
 
       switch (timer.mode) {
         case 'pomodoro':
-          if (timer.sessions % timer.recreoLargoIntervalo === 0) {
-            switchMode('recreoLargo');
+          if (timer.sessions % timer.longBreakInterval === 0) {
+            switchMode('longBreak');
           } else {
-            switchMode('recreoCorto');
+            switchMode('shortBreak');
           }
           break;
         default:
@@ -74,7 +85,7 @@ function stopTimer() {
   clearInterval(interval);
 
   mainButton.dataset.action = 'start';
-  mainButton.textContent = 'start';
+  mainButton.textContent = 'iniciar';
   mainButton.classList.remove('active');
 }
 
