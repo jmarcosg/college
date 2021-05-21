@@ -3,8 +3,8 @@
   position: relative;
   width: 300px;
   height: 130px;
-  margin: 0 auto;
-  margin-top: 8%;
+  margin: auto;
+  margin-top: 5%;
 
   background: #ebeeda;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -16,30 +16,72 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 110px;
+  font-size: 95px;
   line-height: 130px;
-  display: flex;
   text-align: center;
-  margin-left: 4.5%;
 
   color: #000000;
 }
 
-.clockBox progress {
-  border-radius: 5px;
-  width: 300px;
-  height: 6px;
-  position: fixed;
-  margin: 0 auto;
-  margin-top: -6px;
-
-  border: rgba(0, 0, 0, 0.25);
+/* Buttons */
+.button-group {
+  margin-left: auto;
 }
 
-.clockBox progress::-webkit-progress-bar {
-  background-color: #fc6d6d;
+.mode-button {
+  font-size: 14px;
+  height: 28px;
+  cursor: pointer;
+  box-shadow: none;
+  font-weight: 400;
+  color: #000000;
+  border: 1px solid transparent;
+  margin: 0px;
+  margin-top: 5px;
+  border-radius: 4px;
+  padding: 4px 12px;
+  background: none;
 }
 
-.clockBox progress::-webkit-progress-value {
-  background-color: #fc6d6d;
+.mode-button.active {
+  background-color: #ec8585;
+}
+
+.startButton {
+  cursor: pointer;
+  box-shadow: #da5f5fe3 0px 4px 0px;
+  font-size: 17px;
+  height: 35px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  width: 150px;
+  background-color: #ec8585;
+  border-width: initial;
+  border-style: none;
+  margin: auto;
+  margin-top: 8px;
+  border-radius: 4px;
+  transition: color 0.5s ease-in-out 0s;
+}
+
+button:focus,
+button:active {
+  outline: none;
+}
+
+.startButton.active {
+  transform: translateY(4px);
+  box-shadow: none;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
+  .clock {
+    font-size: 6rem;
+  }
 }
