@@ -9,53 +9,60 @@
 
     <title>Pomodoro</title>
 
-    <!-- icons -->
+    <!-- icon -->
     <link rel="icon" type="image/png" href="assets/img/pomodoroIcon.png">
+
     <!-- stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/timer.css">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/timer.css">
+
     <!-- css animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
     <div class="header">
-        <a href="index.html" class="logo">Pomodoro</a>
+        <a href="#" class="logo">Pomodoro</a>
 
         <div class="header-right">
             <a href="index.html" class="active">Inicio</a>
-            <a href="listaTareas.html">Tareas</a>
-            <a href="puntuacion.html">Puntuación</a>
-            <a href="info.html">Información</a>
-            <a href="contacto.html">Contacto</a>
+            <a href="pages/listaTareas.html">Tareas</a>
+            <a href="pages/puntuacion.html">Puntuación</a>
+            <a href="pages/info.html">Información</a>
+            <a href="pages/contacto.html">Contacto</a>
         </div>
     </div>
 
-    <br>
-
-    <main class="app">
-        <div class="clockBox">
-            <div class="clock" id="js-clock">
-                <span id="js-minutes">25</span>
-                <span class="separator">:</span>
-                <span id="js-seconds">00</span>
+    <div class="hvCenter">
+        <div class="clock-box">
+            <div class="timer">
+                <span id="timer">25:00</span>
             </div>
 
-            <div class="timerButtonsBox"></div>
-
-            <div class="button-group mode-buttons" id="js-mode-buttons">
-                <button data-mode="pomodoro" class="button active mode-button" id="js-pomodoro">Pomodoro</button>
-
-                <button data-mode="shortBreak" class="button mode-button" id="js-short-break">Short break</button>
-
-                <button data-mode="longBreak" class="button mode-button" id="js-long-break">Long break</button>
-            </div>
-
-            <button class="startButton" data-action="start" id="js-btn">Iniciar</button>
+            <div id="progressBar"></div>
         </div>
-    </main>
+    </div>
+
+    <div class="hvCenter">
+        <div class="modeButtonsGroup">
+            <button onclick="updateDuration(25)">Pomodoro</button>
+
+            <button onclick="updateDuration(5)">Recreo corto</button>
+
+            <button onclick="updateDuration(15)">Recreo largo</button>
+        </div>
+    </div>
+
+    <div class="hvCenter">
+        <div class="buttonsRow">
+            <button class="btn-main" id="playPause" onclick="playPause()">Iniciar</button>
+        </div>
+    </div>
 
     <script src="assets/js/pomodoroTimer.js"></script>
+
+    <!--TODO: posicionar  info sobre como utilizar el temporizador por debajo del mismo al scrollear-->
+
 </body>
 
 </html>

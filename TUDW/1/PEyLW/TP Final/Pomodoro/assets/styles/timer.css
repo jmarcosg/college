@@ -1,0 +1,66 @@
+/* Clock */
+.clock-box {
+  margin-bottom: 135%;
+  width: 300px;
+  height: 130px;
+  border-radius: 5px;
+
+  background-color: #ebeeda;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.timer {
+  font-size: 95px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.progressBar {
+  width: 300px;
+  height: 8px;
+}
+
+/* Buttons */
+.modeButtonsGroup {
+  margin-bottom: 50%;
+
+  background-color: #fc6d6d;
+  color: #fbfeea;
+}
+
+.modeButtonsGroup button {
+  border: none;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: left;
+  font-size: 14px;
+
+  background-color: #fc6d6d;
+  color: #fbfeea;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.modeButtonsGroup button:hover {
+  color: #fbfeea;
+  background-color: #c25454;
+}
+
+.btn-main {
+  cursor: pointer;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 18px;
+
+  color: #faf3e0;
+  background-color: #fc6d6d;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-main:hover {
+  color: #fbfeea;
+  background-color: #c25454;
+}
