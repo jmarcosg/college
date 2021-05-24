@@ -3,8 +3,8 @@
 html,
 body {
   margin: 0;
-  background: #fbfeea;
-  font-family: "Roboto", sans-serif;
+  background: #faf3e0;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Header */
@@ -28,21 +28,17 @@ body {
 }
 
 .header a.logo {
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 28px;
 }
 
 .header a.logo:hover {
-  font-size: 24px;
-  font-weight: 500;
-
   animation: pulse;
   animation-duration: 1.15s;
 }
 
 .header-right a:hover {
   background-color: rgba(238, 238, 238, 0.199);
-  color: black;
+  color: #1e212d;
 }
 
 .header-right a.active {
@@ -52,6 +48,24 @@ body {
 
 .header-right {
   float: right;
+}
+
+/* Pomodoro info */
+.pomodoroInfoContainer {
+  width: 100%;
+  background-color: #fc6d6d;
+}
+
+/* Utilities */
+
+/* Horizontal & Vertical align */
+.hvCenter {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */

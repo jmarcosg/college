@@ -1,156 +1,95 @@
-const timer = {
-  pomodoro: 25,
-  shortBreak: 5,
-  longBreak: 15,
-  longBreakInterval: 4,
-  sessions: 0,
-};
+const secondsInMin = 60;
+const mins_25 = 25 * secondsInMin;
+const mins_15 = 15 * secondsInMin;
+const mins_5 = 5 * secondsInMin;
 
+let isRunning = false;
 let interval;
+let currentDuration = mins_25;
+let timeLeft = 0;
+let countdownWasStarted = false;
 
-const buttonSound = new Audio('button-sound.mp3');
-const mainButton = document.getElementById('js-btn');
-mainButton.addEventListener('click', () => {
-  buttonSound.play();
-  const { action } = mainButton.dataset;
-  if (action === 'start') {
-    startTimer();
+const playPauseButton = document.getElementById("playPause");
+
+function playPause() {
+  isRunning = !isRunning;
+
+  if (!countdownWasStarted) {
+    resetCountdown();
+    updateString();
+  }
+
+  countdownWasStarted = true;
+
+  if (isRunning) {
+    interval = setInterval(updateCountdown, 1000);
+    playPauseButton.innerHTML = "Pausar";
   } else {
-    stopTimer();
+    stopCountdown();
+    playPauseButton.innerHTML = "Iniciar";
   }
-});
-
-const modeButtons = document.querySelector('#js-mode-buttons');
-modeButtons.addEventListener('click', handleMode);
-
-function getRemainingTime(endTime) {
-  const currentTime = Date.parse(new Date());
-  const difference = endTime - currentTime;
-
-  const total = Number.parseInt(difference / 1000, 10);
-  const minutes = Number.parseInt((total / 60) % 60, 10);
-  const seconds = Number.parseInt(total % 60, 10);
-
-  return {
-    total,
-    minutes,
-    seconds,
-  };
 }
 
-function startTimer() {
-  let { total } = timer.remainingTime;
-  const endTime = Date.parse(new Date()) + total * 1000;
+function updateCountdown() {
+  if (!isRunning) {
+    return;
+  }
 
-  if (timer.mode === 'pomodoro') timer.sessions++;
+  timeLeft--;
+  updateString();
 
-  mainButton.dataset.action = 'stop';
-  mainButton.textContent = 'parar';
-  mainButton.classList.add('active');
-
-  interval = setInterval(function() {
-    timer.remainingTime = getRemainingTime(endTime);
-    updateClock();
-
-    total = timer.remainingTime.total;
-    if (total <= 0) {
-      clearInterval(interval);
-
-      switch (timer.mode) {
-        case 'pomodoro':
-          if (timer.sessions % timer.longBreakInterval === 0) {
-            switchMode('longBreak');
-          } else {
-            switchMode('shortBreak');
-          }
-          break;
-        default:
-          switchMode('pomodoro');
-      }
-
-      if (Notification.permission === 'granted') {
-        const text =
-          timer.mode === 'pomodoro' ? 'Get back to work!' : 'Take a break!';
-        new Notification(text);
-      }
-
-      document.querySelector(`[data-sound="${timer.mode}"]`).play();
-
-      startTimer();
-    }
-  }, 1000);
+  if (timeLeft == 0) {
+    playPause();
+    stopCountdown();
+    timeLeft = currentDuration;
+    updateString();
+    isRunning = false;
+  }
 }
 
-function stopTimer() {
+function stopCountdown() {
   clearInterval(interval);
-
-  mainButton.dataset.action = 'start';
-  mainButton.textContent = 'iniciar';
-  mainButton.classList.remove('active');
 }
 
-function updateClock() {
-  const { remainingTime } = timer;
-  const minutes = `${remainingTime.minutes}`.padStart(2, '0');
-  const seconds = `${remainingTime.seconds}`.padStart(2, '0');
-
-  const min = document.getElementById('js-minutes');
-  const sec = document.getElementById('js-seconds');
-  min.textContent = minutes;
-  sec.textContent = seconds;
-
-  const text =
-    timer.mode === 'pomodoro' ? 'Get back to work!' : 'Take a break!';
-  document.title = `${minutes}:${seconds} — ${text}`;
-
-  const progress = document.getElementById('js-progress');
-  progress.value = timer[timer.mode] * 60 - timer.remainingTime.total;
+function resetCountdown() {
+  isRunning = true;
+  timeLeft = currentDuration;
 }
 
-function switchMode(mode) {
-  timer.mode = mode;
-  timer.remainingTime = {
-    total: timer[mode] * 60,
-    minutes: timer[mode],
-    seconds: 0,
-  };
-
-  document
-    .querySelectorAll('button[data-mode]')
-    .forEach(e => e.classList.remove('active'));
-  document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
-  document.body.style.backgroundColor = `var(--${mode})`;
-  document
-    .getElementById('js-progress')
-    .setAttribute('max', timer.remainingTime.total);
-
-  updateClock();
-}
-
-function handleMode(event) {
-  const { mode } = event.target.dataset;
-
-  if (!mode) return;
-
-  switchMode(mode);
-  stopTimer();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  if ('Notification' in window) {
-    if (
-      Notification.permission !== 'granted' &&
-      Notification.permission !== 'denied'
-    ) {
-      Notification.requestPermission().then(function(permission) {
-        if (permission === 'granted') {
-          new Notification(
-            'Awesome! You will be notified at the start of each session'
-          );
-        }
-      });
-    }
+//Button Handler
+function updateDuration(mins) {
+  if (isRunning) {
+    playPause();
+  }
+  if (mins == 15) {
+    currentDuration = mins_15;
+  } else if (mins == 5) {
+    currentDuration = mins_5;
+  } else {
+    currentDuration = mins_25;
   }
 
-  switchMode('pomodoro');
-});
+  timeLeft = currentDuration;
+  isRunning = false;
+  updateString();
+}
+
+// Visual Changes
+function updateString() {
+  let minutes = Math.floor(timeLeft / secondsInMin);
+  let seconds = timeLeft % secondsInMin;
+  
+  if (minutes < 10) {
+    minutesString = "0" + minutes;
+  } else {
+    minutesString = minutes;
+  }
+
+  if (seconds < 10) {
+    secondsString = "0" + seconds;
+  } else {
+    secondsString = seconds;
+  }
+
+  document.getElementById("timer").innerHTML = minutesString + ":" + secondsString;
+}
