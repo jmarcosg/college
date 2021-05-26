@@ -1,6 +1,6 @@
 /* Clock */
 .clock-box {
-  margin-bottom: 135%;
+  margin: 0 auto;
   width: 300px;
   height: 130px;
   border-radius: 5px;
@@ -10,7 +10,9 @@
 }
 
 .timer {
+  max-height: 130px;
   font-size: 95px;
+  font-family: "Poppins", sans-serif;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -18,25 +20,22 @@
   text-align: center;
 }
 
-.progressBar {
-  width: 300px;
-  height: 8px;
-}
-
 /* Buttons */
 .modeButtonsGroup {
-  margin-bottom: 50%;
-
-  background-color: #fc6d6d;
-  color: #fbfeea;
+  width: 315px;
+  height: 35px;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 
 .modeButtonsGroup button {
-  border: none;
-  padding: 10px 24px;
   cursor: pointer;
+  border: none;
+  min-width: 105px;
+  padding: 8px 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
   float: left;
-  font-size: 14px;
 
   background-color: #fc6d6d;
   color: #fbfeea;
@@ -48,12 +47,30 @@
   background-color: #c25454;
 }
 
+.btn-pomodoro {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.btn-longBreak {
+  border-radius: 0px 4px 4px 0px;
+}
+
+.startPauseButton {
+  width: 105px;
+  height: 35px;
+  margin: 0 auto;
+  margin-top: 1%;
+}
+
 .btn-main {
   cursor: pointer;
   border: none;
-  padding: 10px 24px;
+  min-width: 105px;
+  max-height: 35px;
+  padding: 8px 14px;
   border-radius: 4px;
-  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
 
   color: #faf3e0;
   background-color: #fc6d6d;

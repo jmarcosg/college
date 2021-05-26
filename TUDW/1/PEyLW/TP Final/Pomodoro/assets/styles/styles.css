@@ -1,23 +1,26 @@
 /* Background */
-
 html,
 body {
-  margin: 0;
-  background: #faf3e0;
+  margin: 0 auto;
   font-family: "Poppins", sans-serif;
+  scrollbar-width: none;
+
+  background-color: #fc6d6d;
 }
 
 /* Header */
-.header {
-  background-color: #fc6d6d;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+header {
   overflow: hidden;
   padding: 8px 8px;
+  position: relative;
+
+  background-color: #fc6d6d;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.header a {
+header a {
   float: left;
-  color: black;
+  color: #1e212d;
   text-align: center;
   padding: 15px;
   text-decoration: none;
@@ -27,11 +30,11 @@ body {
   border-radius: 4px;
 }
 
-.header a.logo {
+header a.logo {
   font-size: 28px;
 }
 
-.header a.logo:hover {
+header a.logo:hover {
   animation: pulse;
   animation-duration: 1.15s;
 }
@@ -50,46 +53,66 @@ body {
   float: right;
 }
 
-/* Pomodoro info */
-.pomodoroInfoContainer {
+/* Container */
+.mainContainer {
   width: 100%;
+  height: 1150px;
+  margin: 0 auto;
+
+  background-color: #faf3e0;
+}
+
+/* height: 1090px; */
+/*box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);*/
+.infoContainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  background-color: #fc6d6d;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Pomodoro info */
+.howTo {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: normal;
+}
+
+.howTo span {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.howTo img {
+  width: 1280px;
+  height: 900px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  text-align: center;
+
   background-color: #fc6d6d;
 }
 
-/* Utilities */
-
-/* Horizontal & Vertical align */
-.hvCenter {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+footer a {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child),
-  .dropdown .dropbtn {
-    display: none;
-  }
-
-  .topnav a.icon {
-    float: left;
-    display: block;
-  }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .header-right {
-    float: none;
-  }
+footer a:link,
+footer a:visited,
+footer a:hover,
+footer a:active {
+  color: #1e212d;
 }

@@ -9,60 +9,77 @@
 
     <title>Pomodoro</title>
 
-    <!-- icon -->
+    <!-- icons -->
     <link rel="icon" type="image/png" href="assets/img/pomodoroIcon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="stylesheet" href="assets/styles/timer.css">
 
+    <!-- js script-->
+    <script src="assets/js/scrollToTop.js"></script>
+
     <!-- css animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="header">
-        <a href="#" class="logo">Pomodoro</a>
+    <div class="nav-bar">
+        <header>
+            <a href="#" class="logo">Pomodoro</a>
 
-        <div class="header-right">
-            <a href="index.html" class="active">Inicio</a>
-            <a href="pages/listaTareas.html">Tareas</a>
-            <a href="pages/puntuacion.html">Puntuación</a>
-            <a href="pages/info.html">Información</a>
-            <a href="pages/contacto.html">Contacto</a>
-        </div>
+            <div class="header-right">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="pages/listaTareas.html">Tareas</a>
+                <a href="pages/puntuacion.html">Puntuación</a>
+                <a href="pages/info.html">Información</a>
+                <a href="pages/contacto.html">Contacto</a>
+        </header>
     </div>
 
-    <div class="hvCenter">
+    <div class="mainContainer"><br><br><br><br><br>
         <div class="clock-box">
             <div class="timer">
                 <span id="timer">25:00</span>
             </div>
-
-            <div id="progressBar"></div>
         </div>
-    </div>
 
-    <div class="hvCenter">
         <div class="modeButtonsGroup">
-            <button onclick="updateDuration(25)">Pomodoro</button>
+            <button class="btn-pomodoro" onclick="updateDuration(25)">Pomodoro</button>
 
-            <button onclick="updateDuration(5)">Recreo corto</button>
+            <button class="btn-shortBreak" onclick="updateDuration(5)">Recreo corto</button>
 
-            <button onclick="updateDuration(15)">Recreo largo</button>
+            <button class="btn-longBreak" onclick="updateDuration(15)">Recreo largo</button>
         </div>
-    </div>
 
-    <div class="hvCenter">
-        <div class="buttonsRow">
+        <div class="startPauseButton">
             <button class="btn-main" id="playPause" onclick="playPause()">Iniciar</button>
         </div>
+
+        <!-- js script -->
+        <script src="assets/js/pomodoroTimer.js"></script>
     </div>
 
-    <script src="assets/js/pomodoroTimer.js"></script>
 
-    <!--TODO: posicionar  info sobre como utilizar el temporizador por debajo del mismo al scrollear-->
 
+    <div class="infoContainer" href="#pomodoroInfo">
+        <div class="howTo">
+            <h2 class="title">¿Cómo funciona ésta técnica?</h2>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Técnica Pomodoro es un método de administración de tiempo desarrollado por Francesco Cirillo a finales de los '80. Ésta técnica consiste en utilizar un temporizador para separar nuestro trabajo o tarea en intervalos, tradicionalmente de 25 minutos, separados por recreos cortos. Cada intervalo se hace llamar <I>pomodoro</I>, de la palabra italiana "tomate", basado en el reloj temporizador con forma de tomate que utilizaba Cirillo cuando estudiaba en la universidad.</span><br>
+            <img src="assets/img//howToPomodoro.png" alt="Explicación de como utilizar el reloj.">
+        </div>
+    </div>
+
+    <footer>
+        <i class="fab fa-github fa-lg"><a href="https://github.com/jmarcosg">&nbsp;Github</a></i>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>Copyright 2021 - Todos los derechos reservados</span>
+    </footer>
 </body>
 
 </html>
