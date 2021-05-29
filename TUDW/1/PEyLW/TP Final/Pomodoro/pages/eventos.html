@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pomodoro</title>
+
+    <!-- icons -->
+    <link rel="icon" type="image/png" href="../assets/img/pomodoroIcon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../assets/styles/styles.css">
+    <link rel="stylesheet" href="../assets/styles/calendarEvents.css">
+
+    <!-- css animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <header>
+            <a href="#" class="logo">Pomodoro</a>
+
+            <div class="header-right">
+                <a href="../index.html">Inicio</a>
+                <a href="../pages/tareas.html">Tareas</a>
+                <a href="#" class="active">Eventos</a>
+                <a href="../pages/info.html">Información</a>
+                <a href="../pages/contacto.html">Contacto</a>
+        </header>
+    </div>
+
+    <div class="mainContainer">
+        <div class="calendar disable-selection" id="calendar">
+            <div class="left-side">
+                <div class="current-day text-center">
+                    <h1 class="calendar-left-side-day"></h1>
+                    <div class="calendar-left-side-day-of-week"></div>
+                </div>
+                <div class="current-day-events">
+                    <div>Eventos del día:</div>
+                    <ul class="current-day-events-list"></ul>
+                </div>
+                <div class="add-event-day">
+                    <input type="text" class="add-event-day-field" placeholder="Ingrese un evento">
+                    <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"></span>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="text-right calendar-change-year">
+                    <div class="calendar-change-year-slider">
+                        <span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"></span>
+                        <span class="calendar-current-year"></span>
+                        <span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"></span>
+                    </div>
+                </div>
+                <div class="calendar-month-list">
+                    <ul class="calendar-month"></ul>
+                </div>
+                <div class="calendar-week-list">
+                    <ul class="calendar-week"></ul>
+                </div>
+                <div class="calendar-day-list">
+                    <ul class="calendar-days"></ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="../assets/js/calendarEvents.js"></script>
+    </div>
+
+
+
+    <footer>
+        <i class="fab fa-github fa-lg"><a href="https://github.com/jmarcosg">&nbsp;Github</a></i>
+        <!-- <span>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>Copyright 2021 - Todos los derechos reservados</span> -->
+    </footer>
+
+</body>
+
+</html>

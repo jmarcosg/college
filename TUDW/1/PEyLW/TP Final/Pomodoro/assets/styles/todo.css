@@ -1,0 +1,128 @@
+form {
+  margin: 0 auto;
+  margin-top: 25px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+form input {
+  width: 400px;
+  padding: 0.5rem;
+  font-size: 16px;
+  border: 4px;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+
+  color: #1e212d;
+  background-color: #f2f3e9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+form button {
+  border: none;
+  border-radius: 0px 4px 4px 0px;
+  height: 41px;
+  cursor: pointer;
+  font-size: 20px;
+
+  background: #ff6f47;
+  color: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"] {
+  border-radius: 4px 0px 0px 4px;
+}
+
+form button {
+  width: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  color: #fbfeea;
+  background: #c2c4b0;
+}
+
+form button:hover {
+  background: #fc6d6d;
+  color: #fff;
+}
+
+.todo-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.todo-list {
+  margin: 0 auto;
+  margin-top: 15px;
+  list-style: none;
+}
+
+.todo {
+  /* width: 400px; */
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  display: flex;
+  border-radius: 4px 0px 0px 4px;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+
+  color: #1e212d;
+  background: #f2f3e9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-btn {
+  border: none;
+  border-radius: 0px 4px 4px 0px;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+
+  background: #ff6f47;
+  color: #fff;
+}
+
+.complete-btn {
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+
+  background: #ff6f47;
+  color: #fff;
+}
+
+.complete-btn {
+  background: #9eda51;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+}
