@@ -52,7 +52,7 @@ form button:hover {
 }
 
 .todo-container {
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   justify-content: center;
   /* align-items: center; */

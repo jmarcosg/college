@@ -33,26 +33,53 @@
                 <a href="#" class="active">Tareas</a>
                 <a href="../pages/eventos.html">Eventos</a>
                 <a href="../pages/info.html">Información</a>
-                <a href="../pages/contacto.html">Contacto</a>
+                <a href="pages/otrasTecnicas.html">Más técnicas</a>
+                <a href="pages/contacto.html">Contacto</a>
+            </div>
         </header>
     </div>
 
     <div class="mainContainer">
+        <main id="app">
+            <section id="board">
+                <div id="add-task-form">
+                    <input id="task-value" placeholder="Agrega una idea o tarea">
+                    <button id="add-task">+</button>
+                </div>
+            </section>
 
-    </div>
+            <section id="columns">
+                <div class="column dropzone">
+                    <h3 class="column-title">Ideas</h3>
+                    <ul class="tasks" id="tasks-added">
+                        <!-- <li class="task fill" draggable="true">
+                            <div class="task-content">Create repository template with HTML & CSS</div>
+                            <div class="trash">X</div>
+                        </li> -->
+                    </ul>
+                </div>
 
+                <div class="column dropzone">
+                    <h3 class="column-title">Por hacer</h3>
+                </div>
 
+                <div class="column dropzone">
+                    <h3 class="column-title">Haciendo</h3>
+                </div>
 
-    <div class="infoContainer" href="#pomodoroInfo">
-        <div class="howTo">
+                <div class="column dropzone">
+                    <h3 class="column-title">Hecho</h3>
+                </div>
+            </section>
+        </main>
 
-        </div>
+        <script src="../assets/js/kanban.js"></script>
     </div>
 
     <footer>
         <i class="fab fa-github fa-lg"><a href="https://github.com/jmarcosg">&nbsp;Github</a></i>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span>Copyright 2021 - Todos los derechos reservados</span>
+        <!-- <span>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>Copyright 2021 - Todos los derechos reservados</span> -->
     </footer>
 </body>
 
