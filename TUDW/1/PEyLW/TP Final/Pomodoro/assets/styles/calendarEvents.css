@@ -38,7 +38,7 @@ body {
 
 .calendar {
   width: 840px;
-  height: 600px;
+  height: 575px;
   border-radius: 10px;
   overflow: hidden;
 
@@ -176,7 +176,7 @@ body {
 }
 
 .calendar .calendar-days li {
-  width: calc(460px / 7);
+  width: calc(440px / 7);
   height: 50px;
   line-height: 50px;
 }
@@ -214,7 +214,7 @@ body {
   position: absolute;
   top: 7px;
   right: 7px;
-  background: #1400c7;
+  background: #ec364f;
 }
 
 .calendar .calendar-days li.active-day:after {
@@ -230,7 +230,7 @@ body {
 }
 
 .calendar .calendar-week li {
-  width: calc(460px / 7);
+  width: calc(440px / 7);
   height: 30px;
   line-height: 30px;
 }

@@ -1,0 +1,21 @@
+.info-blog {
+  margin: auto;
+  width: 1280px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+
+  color: #1e212d;
+}
+
+.info-blog a {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  text-decoration: underline;
+}
+
+.info-blog a:link,
+.info-blog a:visited,
+.info-blog a:hover,
+.info-blog a:active {
+  color: #1e212d;
+}

@@ -13,6 +13,7 @@
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="../assets/styles/styles.css">
+    <link rel="stylesheet" href="../assets/styles/infoBlog.css">
 
     <!-- css animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -25,27 +26,121 @@
 <body>
     <div class="nav-bar">
         <header>
-            <a href="#" class="logo">Pomodoro</a>
+            <a id="header" class="logo">Pomodoro</a>
 
             <div class="header-right">
                 <a href="../index.html">Inicio</a>
                 <a href="../pages/tareas.html">Tareas</a>
                 <a href="../pages/eventos.html">Eventos</a>
                 <a href="#" class="active">Información</a>
+                <a href="../pages/otrasTecnicas.html">Más técnicas</a>
                 <a href="../pages/contacto.html">Contacto</a>
+            </div>
         </header>
     </div>
 
     <div class="mainContainer">
+        <div class="info-blog">
+            <h2 style="text-align: center;">Técnica Pomodoro:&nbsp; Guía, Ejemplos, Herramientas y Tips</h2>
 
+            <h3><B>Tabla de contenidos</B></h3>
+            <ul>
+                <li><a href="#info1">¿Qué es la Técnica Pomodoro?</a><br></li>
+                <li><a href="#info2">¿Por qué funciona ésta técnica?</a><br></li>
+                <li><a href="#info3">Cómo sacarle todo el jugo a ésta técnica</a><br></li>
+            </ul>
+
+            <br>
+
+            <div id="info1">
+                <h3><B>¿Qué es la Técnica Pomodoro?</B></h3>
+                <p>Pomodoro es una técnica de administración de tiempo mundialmente popular desarrollada a finales de los '80 por Francesco Cirillo, un desarrollador de software al que se le dificultaba concentrase en sus estudios.</p>
+
+                <h3><B>Beneficios de ésta técnica</B></h3>
+                <p>
+                <ul>
+                    <li>Mejora en la concentración y atención en las tareas.</li>
+                    <li>Disminución del stress.</li>
+                    <li>Mayor efectividad en la administración de distracciones.</li>
+                    <li>Aumento en la motivación en el día a día.</li>
+                    <li>Mejores habitos de control de tiempo.</li>
+                </ul>
+                </p>
+
+                <h3><B>Cómo utilizar la Técnica Pomodoro</B></h3>
+                <p>
+                <ol>
+                    <li>Elegir una tarea que desee completar. Se recomiendan tareas con un criterio específico para el completado.</li>
+                    <li>Poner el temporizador en 25 minutos usando lo que más desee: un reloj de cocina, un teléfono celular o el Temporizador Pomodoro</li>
+                    <li>Trabajar en su tarea hasta que se agote el tiempo.</li>
+                    <li>Luego de completar <B>un Pomodoro</B>, tomarse un recreo corto de 5 minutos y <B>no</B> haga nada relacionado a la tarea o su trabajo durante éste periodo.</li>
+                    <li>Luego de completar <B>cuatro Pomodoros</B>, tomarse un largo de 15 minutos y despegarse de su trabajo o tarea por completo, dejando así que la nueva información se asimile por su propia cuenta. Luego puede volver a repetir el cíclo Pomodoro.</li>
+                </ol>
+                </p>
+
+                <p>Cuando la técnica Pomodo es usada de manera apropiada, va a notar que se puede concentrar en una tarea por periodos más largos, eliminar cansancio, se va a distraer menos y por último va a poder disfrutar más de un balance trabajo-vida social.</p>
+            </div>
+
+            <div id="info2">
+                <h3><B>¿Por qué funciona la Técnica Pomodoro?</B></h3>
+
+                <p>Hay tres razones principales por la cuál funciona:</p>
+
+                <h3><B>Cambia la manera de percibir el tiempo</B></h3>
+
+                <p>Nuestra percepción del tiempo tiene mucha influencia en nuestros niveles de stress. Cuando tratamos al tiempo como algo que constantemente necesitamos más, frases cómo "Necesito más tiempo", "No llego con el tiempo" o "Nunca es suficiente tiempo" se vuelven comúnes. Desafortunadamente, quedarnos sin tiempo nos pone en un modo de stress constante que repercute negativamente en nuestra productividad y concentración.</p>
+
+                <p>Pomodoro nos enseña a ver el tiempo tanto cómo una sucesión de eventos cómo maneras de conseguir nuestro objetivos, lo cual resulta en menor stress y mejora en la concentración.</p>
+
+                <h3><B>Los recreos cortos mejoran la capacidad de atención</B></h3>
+
+                <p>Un <a href="https://www.sciencedaily.com/releases/2011/02/110208131529.htm">estudio realizado</a> en la Universidad de Illinois demostró que la mente humana tiende a distraerse rápidamente cuando estamos trabajando consistentemente en el mismo proyecto. En palabras más cortas, recreos cortos nos permite cambiar entre distintos modos de trabajo y así mantener nuestros niveles de atención altos por periodos más largos.</p>
+
+                <p>Es por eso qué los recreos de cinco minutos en ésta técnica tienen la misma efectividad que sesiones de trabajo.</p>
+
+                <h3><B>Ayuda a agilizar decisiones</B></h3>
+
+                <p><a href="https://www.pnas.org/content/108/17/6889">Investigaciones muestran</a> que tener que tomar muchas decisiones produce cansancio en nuestra voluntad y juicio sesgado. Y nuestra fuerza de voluntad es escencial al querer decidir entre trabajar o mirar Netflix.</p>
+
+                <p>La Técnica Pomodoro está diseñada para evitar distracciones innecesarias y al mismo tiempo concentrar toda nuestra capacidad de atención en una sola tarea, ayudandonos así a mantener nuestros niveles de voluntad en márgenes adecuados.</p>
+            </div>
+
+            <div id="info3">
+                <h3><B>Tips para apovechar al máximo las sesiones Pomodoro</B></h3>
+
+                <p>Los siguientes consejos te van a ayudar a tener Sesiones Pomodoro mucho más productivas.</p>
+
+                <h3><B>Proponerse objetivos S.M.A.R.T</B></h3>
+
+                <p>Del íngles, el críterio S.M.A.R.T define:
+                <ul>
+                    <li><B>S (Specific)</B>: específico, es decir lo más concretos posible</li>
+                    <li><B>M (Mesurable)</B>: medible, debemos establecer criterios de seguimiento y medición para verificar si estamos cumpliendo con nuestro objetivo o nos estamos desviando de él.</li>
+                    <li><B>A (Achievable)</B>: realizable o alcanzables, para hacer alcanzable un objetivo se necesita un previo análisis de lo que has hecho y logrado hasta el momento.</li>
+                    <li><B>R (Realistic)</B>: realista, para definir un objetivo realista debes medir el alcance de tu potencial y de aquellas personas que estarán contigo. También debes estar consciente de los recursos que tienes para lograrlo.</li>
+                    <li><B>T (Time-bound)</B>: Acotados en el tiempo. Unos objetivos SMART planteados de modo inteligente, requieren un plazo de tiempo límite para ser cumplidos. Acotar algo en el tiempo quiere decir que se debe establecer un plazo dentro del cual se debe cumplir el objetivo. Se observa que normalmente lo que primero realizamos es aquello para lo que tenemos menor plazo y que dejamos para después lo menos urgente.</li>
+                </ul>
+                </p>
+
+                <p>Aunque tus objetivos Pomodoro pueden ser grandes o pequeños, es importante que sean específicos.</p>
+
+                <p>Alcanzar objetivos nos genera motivación, al mismo tiempo controlar objetivos con un fín nos ayuda a administrar nuestro tiempo con mayor eficiencia.</p>
+
+                <h3><B>Jugá con el tiempo</B></h3>
+
+                <p>Las sesiones Pomodoro no tienen que ser necesariamente de 25 minutos. La mayoría de la gente puede concentrarse en una tarea en promedio de 15 a 40 minutos, sentite libre de adaptar la técnica a tus necesidades</p>
+
+                <p>Han habido casos donde usuarios hicieron sesiones de 7 minutos o de 1.5 horas. Solo recordá que: Sesiones más largas, recreos más largos. Sesiones más cortas, recreos más cortos.</p>
+
+                <h3><B>Probá usar Pomodoro con música de fondo</B></h3>
+
+                <p>Hay personas que se pueden concentrar mejor con música de fondo y hay otras que prefieren el silencio. Servicios como YouTube o Spotify ofrecen playlists con música LoFi que tal vez te puedan ayudar a concentrarte mejor en tus sesiones.</p>
+            </div>
+        </div>
     </div>
-
-
 
     <footer>
         <i class="fab fa-github fa-lg"><a href="https://github.com/jmarcosg">&nbsp;Github</a></i>
-        <!-- <span>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span>Copyright 2021 - Todos los derechos reservados</span> -->
     </footer>
 
 </body>
