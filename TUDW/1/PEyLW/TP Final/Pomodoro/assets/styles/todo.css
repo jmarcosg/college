@@ -29,7 +29,7 @@ form button {
   font-size: 20px;
 
   background: #ff6f47;
-  color: #fff;
+  color: #f2f3e9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -48,7 +48,7 @@ form button {
 
 form button:hover {
   background: #fc6d6d;
-  color: #fff;
+  color: #f2f3e9;
 }
 
 .todo-container {
@@ -92,7 +92,7 @@ form button:hover {
   font-size: 1rem;
 
   background: #ff6f47;
-  color: #fff;
+  color: #f2f3e9;
 }
 
 .complete-btn {
@@ -102,7 +102,7 @@ form button:hover {
   font-size: 1rem;
 
   background: #ff6f47;
-  color: #fff;
+  color: #f2f3e9;
 }
 
 .complete-btn {
