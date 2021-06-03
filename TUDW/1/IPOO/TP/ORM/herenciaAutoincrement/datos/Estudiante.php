@@ -59,7 +59,7 @@ class Estudiante extends Persona{
 	}	
     
 
-	public static function listar($condicion=""){
+	public function listar($condicion=""){
 	    $arreglo = null;
 		$base=new BaseDatos();
 		$consulta="Select * from estudiante ";
