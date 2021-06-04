@@ -101,7 +101,7 @@ class Persona
         return $resp;
     }
 
-    public static function listar($condicion = "")
+    public function listar($condicion = "")
     {
         $arregloPersona = null;
         $base = new BaseDatos();
