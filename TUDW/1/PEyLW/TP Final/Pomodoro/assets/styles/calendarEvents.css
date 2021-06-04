@@ -39,7 +39,7 @@ body {
 .calendar {
   width: 840px;
   height: 575px;
-  border-radius: 10px;
+  border-radius: 4px;
   overflow: hidden;
 
   background: #f2f3e9;
