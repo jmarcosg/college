@@ -8,16 +8,9 @@ class Nacional extends Torneo
     }
 
     // Metodos
-    public function __toString()
-    {
-        return parent::__toString() . "\n" .
-        "Provincia: " . $this->getProvincia();
-    }
-
     public function obtenerPremioTorneo()
     {
-        $ganadorTorneo = parent::obtenerEquipoGanadorTorneo();
-        $cantidadPartidosGanados = $ganadorTorneo["partidosGanados"];
+        $ganadorTorneo = $this->obtenerEquipoGanadorTorneo();
         $montoPremio = parent::obtenerPremioTorneo();
 
         $montoPremio = ($montoPremio * 1.10) * $cantidadPartidosGanados;
