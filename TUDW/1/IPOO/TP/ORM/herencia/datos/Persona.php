@@ -18,7 +18,7 @@ class Persona
         $this->email = "";
     }
 
-    public function cargar($NroD, $Nom, $Ape, $mail)
+    public function cargar($NroD, $Nom, $Ape, $mail, $nova = null)
     {
         $this->setNrodoc($NroD);
         $this->setNombre($Nom);

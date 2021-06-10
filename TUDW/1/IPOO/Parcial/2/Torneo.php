@@ -81,41 +81,18 @@ class Torneos
 
     public function obtenerEquipoGanadorTorneo()
     {
-        $coleccionPartidos = $this->getColPartidos();
-        $cantGoles = 0;
-        $cantPartidosGanados = 0;
-        $maxCantPartidosGanados = 0;
         $datosEquipoGanador = [
             "equipoGanador" => null,
             "cantidadGolesEnTorneo" => 0,
         ];
-        $coleccionGanadores = null;
-        $i = 0;
+        $cantGoles = 0;
+        $coleccionPartidos = $this->getColPartidos();
+        $coleccionEquiposGanadores = null;
 
-        // Armo una coleccion de los equipos ganadores
-        foreach ($coleccionPartidos as $objPartido) {
-            $ganadorPartido = $objPartido->obtenerGanador();
-            array_push($coleccionGanadores, $ganadorPartido);
-        }
-
-        for ($i = 0; count($coleccionGanadores); $i++) {
-            $nombreEquipo = $coleccionGanadores[$i]["nombre"];
-
-            if ($nombreEquipo == $coleccionGanadores[$i]["nombre"]) {
-                $cantPartidosGanados++;
-            }
-        }
-
-        $maxCantPartidosGanados = $cantPartidosGanados;
-
-        for ($i = 1; count($coleccionGanadores); $i++) {
-            $nombreEquipo = $coleccionGanadores[$i]["nombre"];
-
-            for ($j = 1; count($coleccionGanadores); $j++) {
-                if ($nombreEquipo == $coleccionGanadores[$j]["nombre"]) {
-                    $cantPartidosGanados++;
-                }
-            }
+        // Armo una coleccion con los equipos ganadores
+        foreach ($coleccionPartidos as $partido) {
+            $equipoGanador = $partido->obtenerGanador();
+            array_push($coleccionEquiposGanadores, $equipoGanador);
         }
 
         return $datosEquipoGanador;

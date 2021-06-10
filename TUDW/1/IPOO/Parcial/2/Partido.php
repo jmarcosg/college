@@ -94,23 +94,11 @@ class Partido
         $equipoGanador = null;
         $golesE1 = $this->getCantGolesE1();
         $golesE2 = $this->getCantGolesE2();
-        $datosEquipoGanador = [
-            "objEquipo" => null,
-            "cantGoles" => 0,
-        ];
 
         if ($golesE1 > $golesE2) {
             $equipoGanador = $this->getEquipo1();
-            $datosEquipoGanador = [
-                "objEquipo" => $equipoGanador,
-                "cantGoles" => $golesE1,
-            ];
         } else if ($golesE2 > $golesE1) {
             $equipoGanador = $this->getEquipo2();
-            $datosEquipoGanador = [
-                "objEquipo" => $equipoGanador,
-                "cantGoles" => $golesE2,
-            ];
         }
         return $datosEquipoGanador;
     }

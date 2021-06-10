@@ -55,10 +55,10 @@ class MinisterioDeporte
 
     public function registrarTorneo($colPartidos, $tipo, $arrayAsociativo)
     {
+        $coleccionTorneos = $this->getColTorneos();
         $montoPremio = $arrayAsociativo["montoPremio"];
         $nombreLocalidad = $arrayAsociativo["localidad"];
-        $nombreProvincia = $arrayAsociativo["provincia"];
-        $idTorneo = count($this->getColTorneos());
+        $idTorneo = $arrayAsociativo["idTorneo"];
 
         // Segun el tipo de torneo a crear van a ser la cantidad de atributos del arreglo asocitivo
         if ($tipo == "provincial") {
@@ -67,11 +67,15 @@ class MinisterioDeporte
             $torneo = new Nacional($idTorneo, $colPartidos, $montoPremio, $nombreLocalidad);
         }
 
+        array_push($coleccionTorneos, $torneo);
+        $this->setColTorneos($coleccionTorneos);
+
         return $torneo;
     }
 
     public function otorgarPremioTorneo($idTorneo)
     {
+
         $colTorneos = $this->getColTorneos();
         $montoPremio = $colTorneos->getMontoPremio();
         $equipoGanadorTorneo = $colTorneos->obtenerGanadorTorneo();
