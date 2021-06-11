@@ -46,53 +46,50 @@
 
             <h3>¿Te gustaría participar?</h3>
 
-            <h3>¡Contactame!</h3>
-
-            <div class="contact-wrapper animated bounceInUp">
+            <div class="contactForm-container">
                 <div class="contact-form">
-                    <h3>Contact us</h3>
-                    <form action="">
+                    <h3>¡Contactame!</h3>
+                    <form action="" id="pomodoroProjectContactForm">
                         <p>
                             <label>Nombre</label>
-                            <input type="text" name="fullname">
+                            <input type="text" name="userName" id="user-name">
                         </p>
                         <p>
                             <label>Email</label>
-                            <input type="email" name="email">
+                            <input type="email" name="userEmail" id="user-email">
                         </p>
                         <p>
-                            <label>Phone Number</label>
-                            <input type="tel" name="phone">
+                            <label>Telefono</label>
+                            <input type="tel" name="userPhone" id="user-phone">
                         </p>
                         <p>
                             <label>Motivo</label>
-                            <input type="text" name="affair">
+                            <input type="text" name="userAffair" id="user-affair">
                         </p>
                         <p class="block">
                             <label>Mensaje</label>
-                            <textarea name="message" rows="3"></textarea>
+                            <textarea name="userMessage" id="user-message" rows="3"></textarea>
                         </p>
                         <p class="block">
-                            <button>
+                            <button type="submit">
                                 Enviar
                             </button>
                         </p>
                     </form>
+
+                    <script src="../assets/js/formValidation.js"></script>
                 </div>
 
                 <div class="contact-info">
-                    <h4>También podés contactarme por acá</h4>
+                    <h4>Podés encontrarme acá</h4>
                     <ul>
                         <li><i class="fab fa-github"><a href="https://github.com/jmarcosg">&nbsp;Github</a></i></li>
-                        <li><i class="fas fa-envelope-open-text"></i> juan.gonzalez@est.fi.uncoma.edu.ar</li>
+                        <li><i class="fab fa-instagram"><a href="https://instagram.com/jmarcos.g">&nbsp;Instagram</a></i></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-
-
 
     <footer>
         <i class="fab fa-github fa-lg"><a href="https://github.com/jmarcosg">&nbsp;Github</a></i>
