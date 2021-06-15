@@ -70,7 +70,7 @@ class ObraTeatra extends Funcion
         return $resp;
     }
 
-    public function listar($condicion = "")
+    public function listar($condicion)
     {
         $arreglo = null;
         $baseDatos = new BaseDatos();

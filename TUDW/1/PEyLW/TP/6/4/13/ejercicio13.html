@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Agenda</title>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body onload="iniciarTabla()">
+    <form action="#">
+        Nombre <input type="text" id="nombre"><br />
+        Direccion <input type="text" id="direccion"><br />
+        Ciudad <input type="text" id="ciudad"><br />
+        Telefono <input type="text" id="telefono"><br />
+        <input value="Nuevo Registro" type="button" onclick="insertarRow(document.getElementById('nombre').value,document.getElementById('direccion').value,document.getElementById('ciudad').value,document.getElementById('telefono').value);">
+        <br />
+        <table id="myTable" border="1">
+            <thead>
+                <tr>
+                    <th id="celda">Nombre</th>
+                    <th>Direccion</th>
+                    <th>Ciudad</th>
+                    <th>Telefono</th>
+                    <th>Operacion</th>
+                </tr>
+            </thead>
+        </table>
+    </form>
+</body>
+
+</html>
