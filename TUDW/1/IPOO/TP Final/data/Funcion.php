@@ -167,7 +167,7 @@ class Funcion
         return $resp;
     }
 
-    public function listar($condicion = "")
+    public function listar($condicion)
     {
         $arregloFuncion = null;
         $baseDatos = new BaseDatos();
