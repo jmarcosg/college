@@ -19,7 +19,7 @@ class BaseDatos
     public function __construct()
     {
         $this->HOSTNAME = "127.0.0.1";
-        $this->BASEDATOS = "ipoo_teatro_testing";
+        $this->BASEDATOS = "ipoo_teatro";
         $this->USUARIO = "root";
         $this->CLAVE = "";
         $this->RESULT = 0;
@@ -45,7 +45,7 @@ class BaseDatos
      *
      * @return boolean
      */
-    public function Iniciar()
+    public function iniciar()
     {
         $resp = false;
         $conexion = mysqli_connect($this->HOSTNAME, $this->USUARIO, $this->CLAVE, $this->BASEDATOS);
@@ -71,7 +71,7 @@ class BaseDatos
      * @param string $consulta
      * @return boolean
      */
-    public function Ejecutar($consulta)
+    public function ejecutar($consulta)
     {
         $resp = false;
         unset($this->ERROR);
@@ -90,7 +90,7 @@ class BaseDatos
      *
      * @return boolean
      */
-    public function Registro()
+    public function registro()
     {
         $resp = null;
         if ($this->RESULT) {
