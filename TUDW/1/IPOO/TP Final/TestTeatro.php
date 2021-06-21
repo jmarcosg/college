@@ -85,7 +85,7 @@ function menu()
      * Se controla la opcion ingresada desde el programa principal en el switch correspondiete
      */
     echo "\e[1;37;43m|--------------------------------------|\e[0m\n";
-    echo "\e[1;37;43mOPCIONES\e[0m\n";
+    echo "OPCIONES\n";
     echo "1) Crear teatro\n";
     echo "2) Modificar nombre de un teatro\n";
     echo "3) Modificar direccion de un teatro\n";
@@ -248,7 +248,7 @@ function modificarCiudadTeatro()
  * Opcion 8
  * Muestra el costo total de un teatro para un mes seleccionado
  */
-function obtenerCostoTeatro($objTeatro)
+function obtenerCostoTeatro()
 {
     $abmTeatro = new abmTeatro();
     $objTeatro = seleccionarTeatro();
@@ -315,7 +315,7 @@ function cargarDatosFuncion($objTeatro)
 {
     $abmTeatro = new abmTeatro();
 
-    echo "Ingrese el tipo de funcion a cargar (cine / musical / obra teatral): ";
+    echo "Ingrese el tipo de funcion a cargar (cine / musical / obra): ";
     $tipoFuncion = trim(fgets(STDIN));
     echo "Ingrese nombre de la funcion: ";
     $nombre = trim(fgets(STDIN));
@@ -344,13 +344,13 @@ function cargarDatosFuncion($objTeatro)
     $fecha = $anio . "/" . $mes . "/" . $dia;
 
     // Creo un arreglo asociativo con todas las posibles claves que hay entre todos los tipos de funciones
-    $datosFuncion = ["nombre" => $nombre,
+    $datosFuncion = ["tipo_funcion" => $tipoFuncion,
+        "nombre" => $nombre,
         "fecha" => $fecha,
         "horario_inicio" => $horarioInicio,
         "duracion" => $duracion,
         "precio" => $precio,
         "teatro" => $objTeatro,
-        "tipo_funcion" => $tipoFuncion,
         "director" => "",
         "cantidad_personas" => 0,
         "genero" => "",
@@ -365,7 +365,7 @@ function cargarDatosFuncion($objTeatro)
         $cantidadPersonas = trim(fgets(STDIN));
 
         $datosFuncion["director"] = $director;
-        $datosFuncion["cantidad_personas"] = $persEscena;
+        $datosFuncion["cantidad_personas"] = $cantidadPersonas;
     } else if (strtolower($tipoFuncion) == "cine") {
         echo "Ingrese el genero de la pelicula: ";
         $genero = trim(fgets(STDIN));
@@ -374,7 +374,7 @@ function cargarDatosFuncion($objTeatro)
 
         $datosFuncion["genero"] = $genero;
         $datosFuncion["pais_origen"] = $paisOrigen;
-    } else if (strtolower($tipoFuncion) == "obra teatral") {
+    } else if (strtolower($tipoFuncion) == "obra") {
         echo "Ingrese el autor de la obra teatral: ";
         $autor = trim(fgets(STDIN));
 

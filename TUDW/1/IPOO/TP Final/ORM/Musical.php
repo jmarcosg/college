@@ -17,7 +17,7 @@ class Musical extends Funcion
     {
         parent::cargar($datosFuncionMusical);
         $this->setDirector($datosFuncionMusical["director"]);
-        $this->setCantPersonas($datosFuncionMusical["cantidad_personas"]);
+        $this->setCantidadPersonas($datosFuncionMusical["cantidad_personas"]);
     }
 
     // Observadoras

@@ -126,8 +126,8 @@ class Cine extends Funcion
         $resp = false;
 
         if (parent::insertar()) {
-            $consultaInsertar = "INSERT INTO cine(id, genero, pais_origen)
-            VALUES (" . parent::getId() . ", '" . $this->getGenero() . "', '" . $this->getPaisOrigen() . "')";
+            $consultaInsertar = "INSERT INTO cine(id, genero, pais_origen) VALUES
+            (" . parent::getId() . ", '" . $this->getGenero() . "', '" . $this->getPaisOrigen() . "')";
 
             if ($baseDatos->iniciar()) {
                 if ($baseDatos->ejecutar($consultaInsertar)) {

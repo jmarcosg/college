@@ -10,13 +10,11 @@ class abmFuncion
     public function agregarFuncion($datosFuncion)
     {
         $funcion = new Funcion();
-        $funcionAgregada = false;
         $funcion->cargar($datosFuncion);
         $this->darCosto($funcion);
 
-        if ($funcion->insertar()) {
-            $funcionAgregada = true;
-        }
+        $funcionAgregada = $funcion->insertar();
+
         return $funcionAgregada;
     }
 
@@ -48,8 +46,7 @@ class abmFuncion
         $datosFuncion = "Funciones: \n";
 
         foreach ($coleccionFunciones as $funcion) {
-            $datosFuncion .= "ID: " . $funcion->getIdFuncion() . " " . "Nombre: " . $funcion->getNombre() . " "
-            . "Precio $" . $funcion->getPrecio() . " idTeatro: " . $funcion->getObjTeatro()->getIdTeatro() . "\n";
+            $datosFuncion .= "ID: " . $funcion->getId() . " " . "Nombre: " . $funcion->getNombre() . " " . "Precio $" . $funcion->getPrecio() . " idTeatro: " . $funcion->getObjTeatro()->getId() . "\n";
         }
 
         return $datosFuncion;

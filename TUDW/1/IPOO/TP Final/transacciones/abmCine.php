@@ -2,6 +2,8 @@
 
 class abmCine
 {
+    public function __construct()
+    {}
     /**
      * Crea una nueva funcion de tipo cine
      * @param array $datosFuncion
@@ -10,13 +12,10 @@ class abmCine
     public function agregarFuncion($datosFuncion)
     {
         $nuevaFuncion = new Cine();
-        $funcionAgregada = false;
         $nuevaFuncion->cargar($datosFuncion);
         $this->darCosto($nuevaFuncion);
 
-        if ($nuevaFuncion->insertar()) {
-            $funcionAgregada = true;
-        }
+        $funcionAgregada = $nuevaFuncion->insertar();
 
         return $funcionAgregada;
     }
