@@ -28,12 +28,12 @@ class Funcion
 
     public function cargar($datosFuncion)
     {
-        $this->setNombre($datosFuncion['nombre']);
-        $this->setFecha($datosFuncion['fecha']);
-        $this->setHorarioInicio($datosFuncion['horario_inicio']);
-        $this->setDuracion($datosFuncion['duracion']);
-        $this->setPrecio($datosFuncion['precio']);
-        $this->setObjTeatro($datosFuncion['teatro']);
+        $this->setNombre($datosFuncion["nombre"]);
+        $this->setFecha($datosFuncion["fecha"]);
+        $this->setHorarioInicio($datosFuncion["horario_inicio"]);
+        $this->setDuracion($datosFuncion["duracion"]);
+        $this->setPrecio($datosFuncion["precio"]);
+        $this->setObjTeatro($datosFuncion["teatro"]);
     }
 
     // Observadoras
@@ -131,14 +131,19 @@ class Funcion
     // Metodos
     public function __toString()
     {
+        // Convierto el horario y duracion que estan en un total de segundos a horas y minutos individuales
+        $horaInicio = intdiv(intval($this->getHorarioInicio()), 3600);
+        $minutosInicio = intdiv((intval($this->getHorarioInicio()) % 3600), 60);
+        $duracionMinutos = intdiv(intval($this->getDuracion()), 60);
+
         return "ID: " . $this->getId() . "\n" .
         "Nombre: " . $this->getNombre() . "\n" .
         "Fecha: " . $this->getFecha() . "\n" .
-        "Horario inicio: " . $this->getHorarioInicio() . "\n" .
-        "Duracion: " . $this->getDuracion() . "\n" .
+        "Horario inicio: " . $horaInicio . ":" . $minutosInicio . "\n" .
+        "Duracion: " . $duracionMinutos . " mins" . "\n" .
         "Precio: $" . $this->getPrecio() . "\n" .
-        "Costo sala: $" . $this->getCostoSala() . "\n" .
-        "ID Teatro: " . $this->getIdTeatro() . "\n";
+        "Costo sala: $" . $this->getCostoSala() . "\n";
+        //"Teatro al que pertenece: " . $this->getObjTeatro()->getNombre() . "\n";
     }
 
     /* OPERACIONES EN BASE DE DATOS */
@@ -154,9 +159,9 @@ class Funcion
         $consultaPersona = "SELECT * FROM funcion WHERE id = " . $id;
         $resp = false;
 
-        if ($baseDatos->iniciar()) {
-            if ($baseDatos->ejecutar($consultaPersona)) {
-                if ($row2 = $baseDatos->registro()) { // Seteo los valores de de la funcion
+        if ($baseDatos->Iniciar()) {
+            if ($baseDatos->Ejecutar($consultaPersona)) {
+                if ($row2 = $baseDatos->Registro()) { // Seteo los valores de de la funcion
                     $this->setId($id);
                     $this->setNombre($row2['nombre']);
                     $this->setFecha($row2['fecha']);
@@ -164,7 +169,6 @@ class Funcion
                     $this->setDuracion($row2['duracion']);
                     $this->setPrecio($row2['precio']);
                     $this->setCostoSala($row2['costo_sala']);
-                    $this->setObjTeatro($obj_teatro);
 
                     $idTeatro = $row2['idTeatro'];
                     $objTeatro = new Teatro();
@@ -203,17 +207,17 @@ class Funcion
         // Le concateno a la consulta que ordene de forma ascendente con los id de las funciones
         $consultaFuncion .= " ORDER BY id";
 
-        if ($baseDatos->iniciar()) {
-            if ($baseDatos->ejecutar($consultaFuncion)) {
+        if ($baseDatos->Iniciar()) {
+            if ($baseDatos->Ejecutar($consultaFuncion)) {
                 $arregloFuncion = [];
-                while ($row2 = $baseDatos->registro()) { // Creo una nueva instancia funcion la cual pusheo al array que devuelvo
+                while ($row2 = $baseDatos->Registro()) { // Creo una nueva instancia funcion la cual pusheo al array que devuelvo
                     $id = $row2['id'];
                     $nombre = $row2['nombre'];
                     $fecha = $row2['fecha'];
-                    $horarioInicio = $row2['horarioInicio'];
+                    $horarioInicio = $row2['horario_inicio'];
                     $duracion = $row2['duracion'];
                     $precio = $row2['precio'];
-                    $costoSala = $row['costo_sala'];
+                    $costoSala = $row2['costo_sala'];
                     $idTeatro = $row2['idTeatro'];
 
                     $objTeatro = new Teatro();
@@ -253,9 +257,10 @@ class Funcion
         $resp = false;
 
         // Armo una consulta para insertar nombre, fecha, horario de inicio, duracion, precio e idTeatro en la tabla funcion
-        $consultaInsertar = "INSERT INTO funcion(nombre, fecha, horario_inicio, duracion, precio, costo_sala, idTeatro) VALUES (" . "'" . $this->getNombre() . "','" . $this->getFecha() . "','" . $this->getHorarioInicio() . "','" . $this->getDuracion() . "','" . $this->getPrecio() . "','" . $this->getCostoSala() . "','" . $this->getObjTeatro()->getId() . "')";
+        $consultaInsertar = "INSERT INTO funcion(nombre, fecha, horario_inicio, duracion, precio, costo_sala, idTeatro) VALUES
+        (" . "'" . $this->getNombre() . "','" . $this->getFecha() . "','" . $this->getHorarioInicio() . "','" . $this->getDuracion() . "','" . $this->getPrecio() . "','" . $this->getCostoSala() . "','" . $this->getObjTeatro()->getId() . "')";
 
-        if ($baseDatos->iniciar()) {
+        if ($baseDatos->Iniciar()) {
             if ($id = $baseDatos->devuelveIDInsercion($consultaInsertar)) {
                 $this->setId($id);
                 $resp = true;
@@ -281,8 +286,8 @@ class Funcion
         // nombre, fecha, horario_inicio, duracion, precio, costo_sala, idTeatro
         $consultaModifica = "UPDATE funcion SET nombre = " . "'" . $this->getNombre() . "',fecha = " . $this->getFecha() . ",horario_inicio = " . $this->getHorarioInicio() . ",duracion = " . $this->getDuracion() . ",precio = " . $this->getPrecio() . ",costo_sala = '" . $this->getCostoSala() . "',id_teatro = '" . $this->getObjTeatro()->getIdTeatro() . "' WHERE id = " . $this->getId();
 
-        if ($baseDatos->iniciar()) {
-            if ($baseDatos->ejecutar($consultaModifica)) {
+        if ($baseDatos->Iniciar()) {
+            if ($baseDatos->Ejecutar($consultaModifica)) {
                 $resp = true;
             } else {
                 $this->setMensajeOperacion($baseDatos->getError());
@@ -302,11 +307,11 @@ class Funcion
         $baseDatos = new BaseDatos();
         $resp = false;
 
-        if ($baseDatos->iniciar()) {
+        if ($baseDatos->Iniciar()) {
             $consultaBorra = "DELETE FROM funcion WHERE id = " . $this->getId();
 
             if ($this->getId() != 0) {
-                if ($baseDatos->ejecutar($consultaBorra)) {
+                if ($baseDatos->Ejecutar($consultaBorra)) {
                     $resp = true;
                 } else {
                     $this->setMensajeOperacion($baseDatos->getError());

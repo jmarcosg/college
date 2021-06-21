@@ -2,6 +2,8 @@
 
 class abmObraTeatral
 {
+    public function __construct()
+    {}
     /**
      * Crea una nueva funcion de tipo obra teatral
      * @param array $datosFuncion
@@ -10,13 +12,10 @@ class abmObraTeatral
     public function agregarFuncion($datosFuncion)
     {
         $nuevaFuncion = new ObraTeatral();
-        $funcionAgregada = false;
         $nuevaFuncion->cargar($datosFuncion);
         $this->darCosto($nuevaFuncion);
 
-        if ($cine->insertar()) {
-            $funcionAgregada = true;
-        }
+        $funcionAgregada = $nuevaFuncion->insertar();
 
         return $funcionAgregada;
     }

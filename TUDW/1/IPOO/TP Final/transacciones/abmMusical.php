@@ -2,6 +2,8 @@
 
 class abmMusical
 {
+    public function __construct()
+    {}
     /**
      * Crea una nueva funcion de tipo musical
      * @param array $datosFuncion
@@ -10,13 +12,10 @@ class abmMusical
     public function agregarFuncion($datosFuncion)
     {
         $nuevaFuncion = new Musical();
-        $funcionAgregada = false;
         $nuevaFuncion->cargar($datosFuncion);
         $this->darCosto($nuevaFuncion);
 
-        if ($cine->insertar()) {
-            $funcionAgregada = true;
-        }
+        $funcionAgregada = $nuevaFuncion->insertar();
 
         return $funcionAgregada;
     }

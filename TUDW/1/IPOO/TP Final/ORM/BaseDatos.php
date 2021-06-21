@@ -45,7 +45,7 @@ class BaseDatos
      *
      * @return boolean
      */
-    public function iniciar()
+    public function Iniciar()
     {
         $resp = false;
         $conexion = mysqli_connect($this->HOSTNAME, $this->USUARIO, $this->CLAVE, $this->BASEDATOS);
@@ -71,7 +71,7 @@ class BaseDatos
      * @param string $consulta
      * @return boolean
      */
-    public function ejecutar($consulta)
+    public function Ejecutar($consulta)
     {
         $resp = false;
         unset($this->ERROR);
@@ -90,7 +90,7 @@ class BaseDatos
      *
      * @return boolean
      */
-    public function registro()
+    public function Registro()
     {
         $resp = null;
         if ($this->RESULT) {

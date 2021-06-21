@@ -2,6 +2,8 @@
 
 class abmTeatro
 {
+    public function __construct()
+    {}
     /**
      * Crea una nueva funcion de tipo obra teatral
      * @param string $nombre, $direccion, $ciudad
@@ -91,8 +93,9 @@ class abmTeatro
         $datosTeatros = "Teatros: \n";
 
         foreach ($coleccionTeatros as $teatro) {
-            $datosTeatros .= "|-------------------|\n" . $teatro;
+            $datosTeatros .= $teatro . "\n";
         }
+
         return $datosTeatros;
     }
 
@@ -111,7 +114,6 @@ class abmTeatro
     /**
      * Agrega una nueva funcion a la bd
      * @param array $datosFuncion
-     * @param string $tipoFuncion
      * @return boolean $funcionAgregada
      */
     public function cargarFuncion($datosFuncion)
@@ -126,8 +128,8 @@ class abmTeatro
                 $abm = new abmCine();
             } else if ($tipoFuncion == "musical") {
                 $abm = new abmMusical();
-            } else if ($tipoFuncion == "obra teatro") {
-                $abm = new abmObraTeatro();
+            } else if ($tipoFuncion == "obra") {
+                $abm = new abmObraTeatral();
             }
             $funcionAgregada = $abm->agregarFuncion($datosFuncion);
         }
