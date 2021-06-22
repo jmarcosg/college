@@ -1,4 +1,3 @@
-
 <?php
 class abmFuncion
 {
@@ -32,7 +31,7 @@ class abmFuncion
             $funcion = null;
         }
 
-        return $funcionEncontrada;
+        return $funcion;
     }
 
     /**
