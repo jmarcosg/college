@@ -410,10 +410,10 @@ function modificarNombreFuncion()
  * Opcion 7
  * Modifica el precio de una funcion
  */
-function modificarPrecioFuncion($objFuncion)
+function modificarPrecioFuncion()
 {
-    $objFuncion = seleccionarFuncion();
     $abmFuncion = new abmFuncion();
+    $objFuncion = seleccionarFuncion();
 
     echo "Ingrese el nuevo precio de la funcion: ";
     $nuevoPrecio = trim(fgets(STDIN));
@@ -454,15 +454,15 @@ function borrarFuncion()
     $id = (int) trim(fgets(STDIN));
 
     $abmCine = new abmCine();
-    $funcionEliminada = $abmCine->eliminarFuncionCine($id);
+    $funcionEliminada = $abmCine->eliminarFuncion($id);
 
     if (!$funcionEliminada) {
         $abmMusical = new abmMusical();
-        $funcionEliminada = $abmMusical->eliminarFuncionMusical($id);
+        $funcionEliminada = $abmMusical->eliminarFuncion($id);
 
         if (!$funcionEliminada) {
             $abmObraTeatro = new abmObraTeatro();
-            $funcionEliminada = $abmObraTeatro->eliminarFuncionObraTeatral($id);
+            $funcionEliminada = $abmObraTeatro->eliminarFuncion($id);
         }
     }
 

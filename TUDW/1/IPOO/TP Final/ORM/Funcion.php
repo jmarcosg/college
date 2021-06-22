@@ -170,10 +170,10 @@ class Funcion
                     $this->setPrecio($row2['precio']);
                     $this->setCostoSala($row2['costo_sala']);
 
-                    $idTeatro = $row2['idTeatro'];
+                    $idTeatro = $row2['id_teatro'];
                     $objTeatro = new Teatro();
                     $objTeatro->buscar($idTeatro);
-                    $this->setObjTeatro($idTeatro);
+                    $this->setObjTeatro($objTeatro);
 
                     $resp = true;
                 }
@@ -218,7 +218,7 @@ class Funcion
                     $duracion = $row2['duracion'];
                     $precio = $row2['precio'];
                     $costoSala = $row2['costo_sala'];
-                    $idTeatro = $row2['idTeatro'];
+                    $idTeatro = $row2['id_teatro'];
 
                     $objTeatro = new Teatro();
                     $objTeatro->buscar($idTeatro);
@@ -256,8 +256,8 @@ class Funcion
         $baseDatos = new BaseDatos();
         $resp = false;
 
-        // Armo una consulta para insertar nombre, fecha, horario de inicio, duracion, precio e idTeatro en la tabla funcion
-        $consultaInsertar = "INSERT INTO funcion(nombre, fecha, horario_inicio, duracion, precio, costo_sala, idTeatro) VALUES
+        // Armo una consulta para insertar nombre, fecha, horario de inicio, duracion, precio e id_teatro en la tabla funcion
+        $consultaInsertar = "INSERT INTO funcion(nombre, fecha, horario_inicio, duracion, precio, costo_sala, id_teatro) VALUES
         (" . "'" . $this->getNombre() . "','" . $this->getFecha() . "','" . $this->getHorarioInicio() . "','" . $this->getDuracion() . "','" . $this->getPrecio() . "','" . $this->getCostoSala() . "','" . $this->getObjTeatro()->getId() . "')";
 
         if ($baseDatos->Iniciar()) {
@@ -283,8 +283,8 @@ class Funcion
         $baseDatos = new BaseDatos();
         $resp = false;
 
-        // nombre, fecha, horario_inicio, duracion, precio, costo_sala, idTeatro
-        $consultaModifica = "UPDATE funcion SET nombre = " . "'" . $this->getNombre() . "',fecha = " . $this->getFecha() . ",horario_inicio = " . $this->getHorarioInicio() . ",duracion = " . $this->getDuracion() . ",precio = " . $this->getPrecio() . ",costo_sala = '" . $this->getCostoSala() . "',id_teatro = '" . $this->getObjTeatro()->getIdTeatro() . "' WHERE id = " . $this->getId();
+        // nombre, fecha, horario_inicio, duracion, precio, costo_sala, id_teatro
+        $consultaModifica = "UPDATE funcion SET nombre = " . "'" . $this->getNombre() . "',fecha = " . $this->getFecha() . ",horario_inicio = " . $this->getHorarioInicio() . ",duracion = " . $this->getDuracion() . ",precio = " . $this->getPrecio() . ",costo_sala = '" . $this->getCostoSala() . "',id_teatro = '" . $this->getObjTeatro()->getId() . "' WHERE id = " . $this->getId();
 
         if ($baseDatos->Iniciar()) {
             if ($baseDatos->Ejecutar($consultaModifica)) {

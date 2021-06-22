@@ -20,9 +20,9 @@ CREATE TABLE IF NOT EXISTS `funcion` (
   `duracion` int(10) NOT NULL,
   `precio` double(12,2) NOT NULL,
   `costo_sala` double(12,2) NOT NULL,
-  `idTeatro` int(11) NOT NULL,
+  `id_teatro` int(11) NOT NULL,
   PRIMARY KEY(`id`),
-  FOREIGN KEY(`idTeatro`) REFERENCES `teatro`(`id`)
+  FOREIGN KEY(`id_teatro`) REFERENCES `teatro`(`id`)
   ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
