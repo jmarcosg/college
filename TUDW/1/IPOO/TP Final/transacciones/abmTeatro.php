@@ -145,11 +145,13 @@ class abmTeatro
      * @param object $objTeatro
      * @return boolean $seSolapa
      */
-    private function verificarSolapamiento($fechaFuncionNueva, $horaInicioFuncionNueva, $duracionFuncionNueva, $objTeatro)
+    public function verificarSolapamiento($fechaFuncionNueva, $horaInicioFuncionNueva, $duracionFuncionNueva, $objTeatro)
     {
+        $teatro = new Teatro();
+        $teatro = $objTeatro;
         $seSolapa = true;
         $finFuncionNueva = $horaInicioFuncionNueva + $duracionFuncionNueva;
-        $coleccionFunciones = $objTeatro->getColeccionFunciones();
+        $coleccionFunciones = $teatro->getColeccionFunciones();
         $i = 0;
 
         while ($seSolapa && $i < count($coleccionFunciones)) {
@@ -157,11 +159,13 @@ class abmTeatro
             $finFuncionExistente = $horaInicioFuncionExistente + $coleccionFunciones[$i]->getDuracion();
             $fechaFuncionExistente = $coleccionFunciones[$i]->getFecha();
 
-            if ($fechaFuncionNueva == $fechaFuncionExistente) {
-                if (($horaInicioFuncionNueva >= $horaInicioFuncionExistente && $horaInicioFuncionNueva <= $finFuncionExistente) || ($finFuncionNueva >= $horaInicioFuncionExistente && $finFuncionNueva <= $finFuncionExistente)) {
-                    $seSolapa = false;
-                }
+            // OBS: agradeceria saber el porque de cuando quiero verificar con la fecha SIEMPRE me da como que NO se solapa y me deja cargar la funcion
+            // if ($fechaFuncionNueva == $fechaFuncionExistente) {
+            if (($horaInicioFuncionNueva >= $horaInicioFuncionExistente && $horaInicioFuncionNueva <= $finFuncionExistente) || ($finFuncionNueva >= $horaInicioFuncionExistente && $finFuncionNueva <= $finFuncionExistente)) {
+                echo "se deberia solapar\n";
+                $seSolapa = false;
             }
+            //}
             $i++;
         }
 

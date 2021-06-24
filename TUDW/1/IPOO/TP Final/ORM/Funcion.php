@@ -142,8 +142,8 @@ class Funcion
         "Horario inicio: " . $horaInicio . ":" . $minutosInicio . "\n" .
         "Duracion: " . $duracionMinutos . " mins" . "\n" .
         "Precio: $" . $this->getPrecio() . "\n" .
-        "Costo sala: $" . $this->getCostoSala() . "\n";
-        //"Teatro al que pertenece: " . $this->getObjTeatro()->getNombre() . "\n";
+        "Costo sala: $" . $this->getCostoSala() . "\n" .
+        "Teatro al que pertenece: " . $this->getObjTeatro()->getNombre() . "\n";
     }
 
     /* OPERACIONES EN BASE DE DATOS */
@@ -210,30 +210,32 @@ class Funcion
         if ($baseDatos->Iniciar()) {
             if ($baseDatos->Ejecutar($consultaFuncion)) {
                 $arregloFuncion = [];
-                while ($row2 = $baseDatos->Registro()) { // Creo una nueva instancia funcion la cual pusheo al array que devuelvo
-                    $id = $row2['id'];
-                    $nombre = $row2['nombre'];
-                    $fecha = $row2['fecha'];
-                    $horarioInicio = $row2['horario_inicio'];
-                    $duracion = $row2['duracion'];
-                    $precio = $row2['precio'];
-                    $costoSala = $row2['costo_sala'];
-                    $idTeatro = $row2['id_teatro'];
+                while ($row2 = $baseDatos->Registro()) {
+                    // $id = $row2['id'];
+                    // $nombre = $row2['nombre'];
+                    // $fecha = $row2['fecha'];
+                    // $horarioInicio = $row2['horario_inicio'];
+                    // $duracion = $row2['duracion'];
+                    // $precio = $row2['precio'];
+                    // $costoSala = $row2['costo_sala'];
+                    // $idTeatro = $row2['id_teatro'];
 
-                    $objTeatro = new Teatro();
-                    $objTeatro->buscar($idTeatro);
+                    // $objTeatro = new Teatro();
+                    // $objTeatro->buscar($idTeatro);
 
+                    // $funcion = new Funcion();
+                    // $datosFuncion = ["nombre" => $nombre,
+                    //     "fecha" => $fecha,
+                    //     "horario_inicio" => $horarioInicio,
+                    //     "duracion" => $duracion,
+                    //     "precio" => $precio,
+                    //     "costo_sala" => $costoSala,
+                    //     "teatro" => $objTeatro,
+                    // ];
+                    // $funcion->cargar($datosFuncion);
+                    // $funcion->setId($id);
                     $funcion = new Funcion();
-                    $datosFuncion = ["nombre" => $nombre,
-                        "fecha" => $fecha,
-                        "horario_inicio" => $horarioInicio,
-                        "duracion" => $duracion,
-                        "precio" => $precio,
-                        "costo_sala" => $costoSala,
-                        "teatro" => $objTeatro,
-                    ];
-                    $funcion->cargar($datosFuncion);
-                    $funcion->setId($id);
+                    $funcion->buscar($row2["id"]);
 
                     array_push($arregloFuncion, $funcion);
                 }

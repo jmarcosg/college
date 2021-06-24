@@ -63,7 +63,7 @@ class abmObraTeatral
     {
         $obraTeatral = new ObraTeatral();
         $obraTeatral->Buscar($idFuncionObraTeatral);
-        $funcionEliminada = $musical->eliminar();
+        $funcionEliminada = $obraTeatral->eliminar();
 
         return $funcionEliminada;
     }
