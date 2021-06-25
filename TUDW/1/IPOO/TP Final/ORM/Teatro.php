@@ -57,7 +57,7 @@ class Teatro
         $musical = new Musical();
         $obraTeatral = new ObraTeatral();
 
-        $condicion = ""; //id = '" . $this->getId() . "'
+        $condicion = "id = '" . $this->getId() . "'";
         $funcionesCine = $cine->listar($condicion);
         $funcionesMusical = $musical->listar($condicion);
         $funcionesObrasTeatral = $obraTeatral->listar($condicion);

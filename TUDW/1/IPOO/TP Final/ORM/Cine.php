@@ -98,6 +98,8 @@ class Cine extends Funcion
         // Le concateno a la consulta que ordene de forma ascendente con el id de las funciones de tipo cine
         $consulta .= " ORDER BY id ";
 
+        echo "consulta en funcion cine: " . $consulta . "\n";
+
         if ($baseDatos->iniciar()) {
             if ($baseDatos->ejecutar($consulta)) {
                 $arregloCine = [];
