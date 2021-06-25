@@ -321,11 +321,11 @@ function cargarDatosFuncion($objTeatro)
     $nombre = trim(fgets(STDIN));
     echo "Ingrese la fecha de la funcion (numeros)\n";
     echo "Dia: ";
-    $dia = (int) trim(fgets(STDIN));
+    $dia = trim(fgets(STDIN));
     echo "Mes: ";
-    $mes = (int) trim(fgets(STDIN));
+    $mes = trim(fgets(STDIN));
     echo "Año: ";
-    $anio = (int) trim(fgets(STDIN));
+    $anio = trim(fgets(STDIN));
     echo "Ingrese el horario de la funcion (numeros)\n";
     echo "Hora: ";
     $horaInicio = (int) trim(fgets(STDIN));

@@ -150,6 +150,7 @@ class abmTeatro
         $teatro = new Teatro();
         $teatro = $objTeatro;
         $seSolapa = true;
+        $fechaFuncionNueva = strtotime($fechaFuncionNueva);
         $finFuncionNueva = $horaInicioFuncionNueva + $duracionFuncionNueva;
         $coleccionFunciones = $teatro->getColeccionFunciones();
         $i = 0;
@@ -158,14 +159,14 @@ class abmTeatro
             $horaInicioFuncionExistente = $coleccionFunciones[$i]->getHorarioInicio();
             $finFuncionExistente = $horaInicioFuncionExistente + $coleccionFunciones[$i]->getDuracion();
             $fechaFuncionExistente = $coleccionFunciones[$i]->getFecha();
+            $fechaFuncionExistente = strtotime($fechaFuncionExistente);
 
             // OBS: agradeceria saber el porque de cuando quiero verificar con la fecha SIEMPRE me da como que NO se solapa y me deja cargar la funcion
-            // if ($fechaFuncionNueva == $fechaFuncionExistente) {
-            if (($horaInicioFuncionNueva >= $horaInicioFuncionExistente && $horaInicioFuncionNueva <= $finFuncionExistente) || ($finFuncionNueva >= $horaInicioFuncionExistente && $finFuncionNueva <= $finFuncionExistente)) {
-                echo "se deberia solapar\n";
-                $seSolapa = false;
+            if ($fechaFuncionNueva == $fechaFuncionExistente) {
+                if (($horaInicioFuncionNueva >= $horaInicioFuncionExistente && $horaInicioFuncionNueva <= $finFuncionExistente) || ($finFuncionNueva >= $horaInicioFuncionExistente && $finFuncionNueva <= $finFuncionExistente)) {
+                    $seSolapa = false;
+                }
             }
-            //}
             $i++;
         }
 
