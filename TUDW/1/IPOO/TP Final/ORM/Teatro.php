@@ -52,19 +52,19 @@ class Teatro
 
     public function getColeccionFunciones()
     {
-        if (count($this->coleccionFunciones) == 0) {
-            $cine = new Cine();
-            $musical = new Musical();
-            $obraTeatral = new ObraTeatral();
+        // if (count($this->coleccionFunciones) == 0) {
+        $cine = new Cine();
+        $musical = new Musical();
+        $obraTeatral = new ObraTeatral();
 
-            $condicion = "id = '" . $this->getId() . "'";
-            $funcionesCine = $cine->listar($condicion);
-            $funcionesMusical = $musical->listar($condicion);
-            $funcionesObrasTeatral = $obraTeatral->listar($condicion);
+        $condicion = ""; //id = '" . $this->getId() . "'
+        $funcionesCine = $cine->listar($condicion);
+        $funcionesMusical = $musical->listar($condicion);
+        $funcionesObrasTeatral = $obraTeatral->listar($condicion);
 
-            $coleccionFunciones = array_merge($funcionesMusical, $funcionesCine, $funcionesObrasTeatral); // Mergeo todas las colecciones en una sola
-            $this->setColeccionFunciones($coleccionFunciones);
-        }
+        $coleccionFunciones = array_merge($funcionesMusical, $funcionesCine, $funcionesObrasTeatral); // Mergeo todas las colecciones en una sola
+        $this->setColeccionFunciones($coleccionFunciones);
+        //}
 
         return $this->coleccionFunciones;
     }

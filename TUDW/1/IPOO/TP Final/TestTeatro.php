@@ -84,7 +84,7 @@ function menu()
      * Menu que se muestra al usuario
      * Se controla la opcion ingresada desde el programa principal en el switch correspondiete
      */
-    echo "\e[1;37;43m|--------------------------------------|\e[0m\n";
+    echo "\e[1;37;47m|--------------------------------------|\e[0m\n";
     echo "OPCIONES\n";
     echo "1) Crear teatro\n";
     echo "2) Modificar nombre de un teatro\n";
@@ -99,7 +99,7 @@ function menu()
     echo "11) Borrar una funcion\n";
     echo "12) Borrar un teatro\n";
     echo "0) Finalizar programa\n";
-    echo "\e[1;37;43m|--------------------------------------|\e[0m\n";
+    echo "\e[1;37;47m|--------------------------------------|\e[0m\n";
 
     // Ingreso y lectura de la opcion
     echo "Ingrese una opcion: ";
@@ -321,11 +321,11 @@ function cargarDatosFuncion($objTeatro)
     $nombre = trim(fgets(STDIN));
     echo "Ingrese la fecha de la funcion (numeros)\n";
     echo "Dia: ";
-    $dia = (int) trim(fgets(STDIN));
+    $dia = trim(fgets(STDIN));
     echo "Mes: ";
-    $mes = (int) trim(fgets(STDIN));
+    $mes = trim(fgets(STDIN));
     echo "Año: ";
-    $anio = (int) trim(fgets(STDIN));
+    $anio = trim(fgets(STDIN));
     echo "Ingrese el horario de la funcion (numeros)\n";
     echo "Hora: ";
     $horaInicio = (int) trim(fgets(STDIN));
@@ -341,7 +341,7 @@ function cargarDatosFuncion($objTeatro)
 
     $horarioInicio = pasarASegundos($horaInicio, $minutosInicio);
     $duracion = pasarASegundos($horaDuracion, $minutosDuracion);
-    $fecha = $anio . "/" . $mes . "/" . $dia;
+    $fecha = $anio . "-" . $mes . "-" . $dia;
 
     // Creo un arreglo asociativo con todas las posibles claves que hay entre todos los tipos de funciones
     $datosFuncion = ["tipo_funcion" => $tipoFuncion,
@@ -461,7 +461,7 @@ function borrarFuncion()
         $funcionEliminada = $abmMusical->eliminarFuncion($id);
 
         if (!$funcionEliminada) {
-            $abmObraTeatro = new abmObraTeatro();
+            $abmObraTeatro = new abmObraTeatral();
             $funcionEliminada = $abmObraTeatro->eliminarFuncion($id);
         }
     }

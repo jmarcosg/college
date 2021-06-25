@@ -45,7 +45,7 @@ class abmFuncion
         $datosFuncion = "Funciones: \n";
 
         foreach ($coleccionFunciones as $funcion) {
-            $datosFuncion .= "ID: " . $funcion->getId() . " " . "Nombre: " . $funcion->getNombre() . " " . "Precio $" . $funcion->getPrecio() . " idTeatro: " . $funcion->getObjTeatro()->getId() . "\n";
+            $datosFuncion .= "ID: " . $funcion->getId() . " " . "Nombre: " . $funcion->getNombre() . " " . "Precio $" . $funcion->getPrecio() . " Teatro: " . $funcion->getObjTeatro()->getNombre() . "\n";
         }
 
         return $datosFuncion;
