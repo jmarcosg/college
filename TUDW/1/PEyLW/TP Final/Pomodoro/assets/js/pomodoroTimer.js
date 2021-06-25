@@ -26,8 +26,14 @@ function playPause() {
     playPauseButton.innerHTML = "Pausar";
   } else {
     stopCountdown();
+    bellRing();
     playPauseButton.innerHTML = "Iniciar";
   }
+}
+
+function bellRing(){
+  var bell = document.getElementById("bell");
+  bell.play();
 }
 
 function updateCountdown() {
