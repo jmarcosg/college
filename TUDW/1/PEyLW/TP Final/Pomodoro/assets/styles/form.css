@@ -32,6 +32,15 @@ ul {
   display: block;
 }
 
+.contact-form form select {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-form select option {
+  font-family: "Poppins", sans-serif;
+}
+
 .contact-form form p {
   margin: 0;
   padding: 1em;
@@ -55,6 +64,10 @@ ul {
 
   color: #1e212d;
   border-bottom: 1px solid #1e212d;
+}
+
+.contact-form form textarea {
+  resize: none;
 }
 
 .contact-form form button {

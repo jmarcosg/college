@@ -1,51 +1,84 @@
-const form = document.getElementById('pomodoroProjectContactForm');
-const username = document.getElementById('user-name');
-const email = document.getElementById('user-email');
-const password = document.getElementById('password');
-const confirm = document.getElementById('password1');
-
-function showError(input,message)
-{
-    const formcontrol = input.parentElement;
-     formcontrol.className = 'from-control error';
-     const small = formcontrol.querySelector('small');
-     small.innerHTML = message;
+function formCheck() {
+	var validForm;
+	validForm = checkInputs();
+	
+	if (validForm) {
+		emptyInputs();
+		resetBorderColor();
+		location.replace("../index.html");
+	}
 }
 
-function showSuccess(input)
-{
-        const formcontrol = input.parentElement;
-        formcontrol.className = 'from-control success';
 
+function checkInputs() {
+	// trim to remove the whitespaces
+	var input, valid;
+	valid = true;
+	
+	input = document.getElementById("userName");
+	
+	if(input.value === '') {
+		colorBorder(input);
+		valid = false;
+	}
+	
+	input = document.getElementById("userEmail");
+	
+	if(!isEmail(input.value)) {
+		colorBorder(input);
+		valid = false;
+	}
+	
+	input = document.getElementById("userSocialMedia");
+	
+	if(input.value === '') {
+		colorBorder(input);
+		valid = false;
+	}
+	
+	input = document.getElementById("userAffair");
+	
+	if(input.value === '') {
+		colorBorder(input);
+		valid = false;
+	}
+	
+	input = document.getElementById("userMessage");
+	
+	if(input.value === '') {
+		colorBorder(input);
+		valid = false;
+	}
+	
+	return valid;
 }
 
-form.addEventListener('submit',function(e){
-    e.preventDefault();
-    
-    if(username.value === "")
-    {
-        showError(username , 'username is required');
-    }else 
-    {
-        showSuccess(username);
-    }
-    if(email.value === "")
-    {
-        showError(email, "email is required");
-    }else{
-        showSuccess(email);
-    }if(password.value === "")
-    {
-        showError(password, "password is required");
-    }else{
-        showSuccess(password);
-    }
-    if(confirm.value === "")
-    {
-        showError(confirm, "password is required");
-    }
-    else{
-        showSuccess(confirm);
-    }
-   
-});
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+function colorBorder(input) {
+	input.style.borderColor = "#fc6d6d";
+}
+
+function emptyInputs(){
+	document.getElementById("userName").value = "";
+	document.getElementById("userEmail").value = "";
+	document.getElementById("userSocialMedia").value = "";
+	document.getElementById("userAffair").value = "";
+	document.getElementById("userMessage").value = "";
+}
+
+function resetBorderColor(){
+	userName = document.getElementById("userName");
+	userEmail = document.getElementById("userEmail");
+	userSocialMedia = document.getElementById("userSocialMedia");
+	userAffair = document.getElementById("userAffair");
+	userMessage = document.getElementById("userMessage");
+	
+	userName.style.borderColor = "#1e212d";
+	userEmail.style.borderColor = "#1e212d";
+	userSocialMedia.style.borderColor = "#1e212d";
+	userAffair.style.borderColor = "#1e212d";
+	userMessage.style.borderColor = "#1e212d";
+}

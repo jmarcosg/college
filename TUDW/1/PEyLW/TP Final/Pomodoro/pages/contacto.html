@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="../assets/styles/infoBlog.css">
     <link rel="stylesheet" href="../assets/styles/form.css">
 
+    <script src="../assets/js/formValidation.js"></script>
+
     <!-- css animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -49,35 +51,46 @@
             <div class="contactForm-container">
                 <div class="contact-form">
                     <h3>¡Contactame!</h3>
-                    <form action="" id="pomodoroProjectContactForm">
+
+                    <form id="form">
                         <p>
                             <label>Nombre</label>
-                            <input type="text" name="userName" id="user-name">
+                            <input type="text" name="userName" id="userName">
                         </p>
+
                         <p>
                             <label>Email</label>
-                            <input type="email" name="userEmail" id="user-email">
+                            <input type="email" name="userEmail" id="userEmail">
                         </p>
+
                         <p>
-                            <label>Telefono</label>
-                            <input type="tel" name="userPhone" id="user-phone">
+                            <label>Red social:
+                                <select id="socialMediaSelection" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="twitter">Twitter</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="other">Otra</option>
+                                </select>
+                            </label>
+                            <input type="text" name="userSocialMedia" id="userSocialMedia" value="@">
                         </p>
+
                         <p>
                             <label>Motivo</label>
-                            <input type="text" name="userAffair" id="user-affair">
+                            <input type="text" name="userAffair" id="userAffair">
                         </p>
+
                         <p class="block">
                             <label>Mensaje</label>
-                            <textarea name="userMessage" id="user-message" rows="3"></textarea>
+                            <textarea name="userMessage" id="userMessage" rows="3"></textarea>
                         </p>
+
                         <p class="block">
-                            <button type="submit">
+                            <button type="submit" id="submitButton" onclick="formCheck()">
                                 Enviar
                             </button>
                         </p>
                     </form>
-
-                    <script src="../assets/js/formValidation.js"></script>
                 </div>
 
                 <div class="contact-info">
