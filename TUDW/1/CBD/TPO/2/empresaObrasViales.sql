@@ -1,7 +1,7 @@
 --
 -- Estructura de tabla para la tabla `vehiculo`
 --
-CREATE TABLE IF NOT EXISTS `vehiculo` (
+CREATE TABLE `vehiculo` (
   `matricula` varchar(11) NOT NULL,
   `marca` varchar(50) NOT NULL,
   `modelo` varchar(50) NOT NULL,
@@ -23,7 +23,7 @@ INSERT INTO `vehiculo` (`matricula`, `marca`, `modelo`, `anio`) VALUES
 --
 -- Estructura de tabla para la tabla `cantera`
 --
-CREATE TABLE IF NOT EXISTS `cantera` (
+CREATE TABLE `cantera` (
   `id` varchar(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `coordenada_latitud` varchar(50) NOT NULL,
@@ -45,7 +45,7 @@ INSERT INTO `cantera` (`id`, `nombre`, `coordenada_latitud`, `coordenada_longitu
 --
 -- Estructura de tabla para la tabla `ruta`
 --
-CREATE TABLE IF NOT EXISTS `ruta` (
+CREATE TABLE `ruta` (
   `id` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `tipo` varchar(100) NOT NULL,
@@ -66,7 +66,7 @@ INSERT INTO `ruta` (`id`,`nombre`, `tipo`) VALUES
 --
 -- Estructura de tabla para la tabla `inspector`
 --
-CREATE TABLE IF NOT EXISTS `inspector` (
+CREATE TABLE `inspector` (
   `dni` bigint(15) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `telefono` bigint(30) NOT NULL,
@@ -88,7 +88,7 @@ INSERT INTO `inspector` (`dni`, `nombre`, `telefono`, `mail`) VALUES
 --
 -- Estructura de tabla para la tabla `auto`
 --
-CREATE TABLE IF NOT EXISTS `auto` (
+CREATE TABLE `auto` (
   `matricula` varchar(11) NOT NULL,
   `sedan` boolean NOT NULL,
   PRIMARY KEY (`matricula`),
@@ -106,7 +106,7 @@ INSERT INTO `auto` (`matricula`, `sedan`) VALUES
 --
 -- Estructura de tabla para la tabla `camioneta`
 --
-CREATE TABLE IF NOT EXISTS `camioneta` (
+CREATE TABLE `camioneta` (
   `matricula` varchar(11) NOT NULL,
   `capacidad_carga` double(4,2) NOT NULL,
   `doble_cabina` boolean NOT NULL, 
@@ -125,7 +125,7 @@ INSERT INTO `camioneta` (`matricula`, `capacidad_carga`, `doble_cabina`) VALUES
 --
 -- Estructura de tabla para la tabla `camion`
 --
-CREATE TABLE IF NOT EXISTS `camion` (
+CREATE TABLE `camion` (
   `matricula` varchar(11) NOT NULL,
   `capacidad_carga` double(4,2) NOT NULL,
   `cantidad_ejes` int(2) NOT NULL,
@@ -146,7 +146,7 @@ INSERT INTO `camion` (`matricula`, `capacidad_carga`, `cantidad_ejes`, `grua_inc
 --
 -- Estructura de tabla para la tabla `material`
 --
-CREATE TABLE IF NOT EXISTS `material` (
+CREATE TABLE `material` (
   `id` varchar(50) NOT NULL,
   `tipo` varchar(50) NOT NULL,
   `id_cantera` varchar(11) NOT NULL,
@@ -169,7 +169,7 @@ INSERT INTO `material` (`id`, `tipo`, `id_cantera`) VALUES
 --
 -- Estructura de tabla para la tabla `obra`
 --
-CREATE TABLE IF NOT EXISTS `obra` (
+CREATE TABLE `obra` (
   `id` varchar(50) NOT NULL,
   `fecha_contratacion` varchar(10) NOT NULL,
   `nombre` varchar(50) NOT NULL,
@@ -194,7 +194,7 @@ INSERT INTO `obra` (`id`, `fecha_contratacion`, `nombre`, `descripcion`, `id_rut
 --
 -- Estructura de tabla para la tabla `tendido`
 --
-CREATE TABLE IF NOT EXISTS `tendido` (
+CREATE TABLE `tendido` (
   `id` varchar(50) NOT NULL,
   `kilometraje_inicial` bigint(50) NOT NULL,
   `kilometraje_final` varchar(50) NOT NULL,
@@ -202,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `tendido` (
   `id_material` varchar(50) NOT NULL,
   `id_obra` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`id_material`) REFERENCES `material`(`id`),
+  FOREIGN KEY (`id_material`) REFERENCES `material`(`id`) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (`id_obra`) REFERENCES `obra`(`id`)
   ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -221,34 +221,32 @@ INSERT INTO `tendido` (`id`, `kilometraje_inicial`, `kilometraje_final`, `jornad
 --
 -- Estructura de tabla para la tabla `boleta`
 --
-CREATE TABLE IF NOT EXISTS `boleta` (
+CREATE TABLE `boleta` (
   `numero` bigint(20) NOT NULL,
   `fecha` varchar(10) NOT NULL,
   `monto` bigint(50) NOT NULL,
   `peso` double(4,2) NOT NULL,
   `id_cantera` varchar(11) NOT NULL,
-  `matricula_camion` varchar(11) NOT NULL,
   PRIMARY KEY (`numero`),
-  FOREIGN KEY (`id_cantera`) REFERENCES `cantera`(`id`),
-  FOREIGN KEY (`matricula_camion`) REFERENCES `camion`(`matricula`)
+  FOREIGN KEY (`id_cantera`) REFERENCES `cantera`(`id`)
   ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `boleta`
 --
-INSERT INTO `boleta` (`numero`, `fecha`, `monto`, `peso`, `id_cantera`, `matricula_camion`) VALUES
-(1, '2020-03-12', 12300, 2350.20, '1', 'AC 156 OC'),
-(2, '2019-02-14', 15321, 1562.32, '6', 'BD 861 KF'),
-(3, '2021-07-02', 2500, 100.00, '5', 'BD 861 KF'),
-(4, '2020-12-25', 9658, 7564.54, '1', 'AC 156 OC'),
-(5, '2019-09-30', 6387, 7685.50, '3', 'BD 861 KF'),
-(6, '2021-01-15', 8796, 9845.65, '1', 'AC 156 OC');
+INSERT INTO `boleta` (`numero`, `fecha`, `monto`, `peso`, `id_cantera`) VALUES
+(1, '2020-03-12', 12300, 2350.20, '1'),
+(2, '2019-02-14', 15321, 1562.32, '6'),
+(3, '2021-07-02', 2500, 100.00, '5'),
+(4, '2020-12-25', 9658, 7564.54, '1'),
+(5, '2019-09-30', 6387, 7685.50, '3'),
+(6, '2021-01-15', 8796, 9845.65, '1');
 
 --
 -- Estructura de tabla para la tabla `jornada`
 --
-CREATE TABLE IF NOT EXISTS `jornada` (
+CREATE TABLE `jornada` (
   `numero_jornada` bigint(15) NOT NULL,
   `total_jornales` bigint(15) NOT NULL,
   `costo_jornal` bigint(30) NOT NULL,
@@ -270,23 +268,12 @@ INSERT INTO `jornada` (`numero_jornada`, `total_jornales`, `costo_jornal`, `id_o
 (5, 50000, 10000, 'O006');
 
 --
--- Estructura de tabla para la tabla `viaja`
---
-CREATE TABLE IF NOT EXISTS `viaja` (
-  `id_cantera` varchar(11) NOT NULL,
-  `matricula_camion` varchar(11) NOT NULL,
-  FOREIGN KEY (`id_cantera`) REFERENCES `cantera`(`id`),
-  FOREIGN KEY (`matricula_camion`) REFERENCES `camion`(`matricula`)
-  ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
 -- Estructura de tabla para la tabla `asigna`
 --
-CREATE TABLE IF NOT EXISTS `asigna` (
+CREATE TABLE `asigna` (
   `dni_inspector` bigint(15) NOT NULL,
   `matricula_vehiculo` varchar(11) NOT NULL,
-  FOREIGN KEY (`dni_inspector`) REFERENCES `inspector`(`dni`),
+  FOREIGN KEY (`dni_inspector`) REFERENCES `inspector`(`dni`) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (`matricula_vehiculo`) REFERENCES `vehiculo`(`matricula`)
   ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -305,10 +292,10 @@ INSERT INTO `asigna` (`dni_inspector`, `matricula_vehiculo`) VALUES
 --
 -- Estructura de tabla para la tabla `trabaja`
 --
-CREATE TABLE IF NOT EXISTS `trabaja` (
+CREATE TABLE `trabaja` (
   `dni_inspector` bigint(15) NOT NULL,
   `id_obra` varchar(50) NOT NULL,
-  FOREIGN KEY (`dni_inspector`) REFERENCES `inspector`(`dni`),
+  FOREIGN KEY (`dni_inspector`) REFERENCES `inspector`(`dni`) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (`id_obra`) REFERENCES `obra`(`id`)
   ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -323,6 +310,51 @@ INSERT INTO `trabaja` (`dni_inspector`, `id_obra`) VALUES
 (40101010, 'O004'),
 (16256846, 'O005'),
 (25639845, 'O006');
+
+--
+-- Estructura de tabla para la tabla `registra`
+--
+CREATE TABLE `registra` (
+  `matricula_vehiculo` varchar(11) NOT NULL,
+  `numero_boleta` bigint(20) NOT NULL,
+  FOREIGN KEY (`matricula_vehiculo`) REFERENCES `camion`(`matricula`) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (`numero_boleta`) REFERENCES `boleta`(`numero`)
+  ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `registra`
+--
+INSERT INTO `registra` (`matricula_vehiculo`, `numero_boleta`) VALUES
+('AC 156 OC', 1),
+('AC 156 OC', 2),
+('AC 156 OC', 3),
+('BD 861 KF', 4),
+('BD 861 KF', 5),
+('BD 861 KF', 6);
+
+--
+-- Estructura de tabla para la tabla `incluye`
+--
+CREATE TABLE `incluye` (
+  `id_material` varchar(50) NOT NULL,
+  `numero_boleta` bigint(20) NOT NULL,
+  FOREIGN KEY (`id_material`) REFERENCES `material`(`id`),
+  FOREIGN KEY (`numero_boleta`) REFERENCES `boleta`(`numero`)
+  ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `incluye`
+--
+INSERT INTO `incluye` (`id_material`, `numero_boleta`) VALUES
+('P001', 1),
+('A001', 2),
+('P002', 3),
+('A002', 4),
+('P003', 5),
+('A003', 6);
+
 
 -------------------------------------------------------------------------------------------------
 -----------------------------------------Consultas-----------------------------------------------
